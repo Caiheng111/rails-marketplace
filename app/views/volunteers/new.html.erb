@@ -1,0 +1,33 @@
+
+
+
+<%= form_with(model: @volunteer, local: true) do |form| %>
+    <div>
+        <p><%= form.label :name %></p>
+        <%= form.text_field :name%>
+    </div>
+    <div>
+       <p> <%= form.label :description %></p>
+        <%= form.text_area :description %>
+    </div>
+    <div>
+       <p> <%= form.label :Email %></p>
+        <%= form.text_area :email %>
+    </div>
+    <div>
+       <p> <%= form.label :Skill %></p>
+        <%= form.text_area :skill %>
+    </div>
+    <div>
+       <p> <%= form.label :Location %></p>
+        <%= form.text_area :location %>
+    </div>
+    <div>
+       <p> <%= form.label :experienxe %></p>
+        <%= form.text_area :experience %>
+    </div>
+  
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

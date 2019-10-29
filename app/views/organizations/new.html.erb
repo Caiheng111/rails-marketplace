@@ -1,0 +1,25 @@
+
+
+
+<%= form_with(model: @organization, local: true) do |form| %>
+    <div>
+        <p><%= form.label :title %></p>
+        <%= form.text_field :title%>
+    </div>
+    <div>
+       <p> <%= form.label :description %></p>
+        <%= form.text_area :description %>
+    </div>
+    <div>
+       <p> <%= form.label :website %></p>
+        <%= form.text_area :website %>
+    </div>
+    <div>
+       <p> <%= form.label :location %></p>
+        <%= form.text_area :location %>
+    </div>
+  
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
