@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_30_052601) do
+ActiveRecord::Schema.define(version: 2019_10_30_114944) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,23 @@ ActiveRecord::Schema.define(version: 2019_10_30_052601) do
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "charities", force: :cascade do |t|
+    t.string "title"
+    t.string "location"
+    t.string "project_leader"
+    t.integer "raised_goal"
+    t.integer "current_raised"
+    t.text "summary"
+    t.text "challenges"
+    t.text "solution"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "organization_id"
+    t.bigint "category_id"
+    t.index ["category_id"], name: "index_charities_on_category_id"
+    t.index ["organization_id"], name: "index_charities_on_organization_id"
   end
 
   create_table "organizations", force: :cascade do |t|
@@ -80,6 +97,8 @@ ActiveRecord::Schema.define(version: 2019_10_30_052601) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "charities", "categories"
+  add_foreign_key "charities", "organizations"
   add_foreign_key "organizations", "users"
   add_foreign_key "volunteers", "users"
 end

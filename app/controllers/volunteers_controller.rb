@@ -2,6 +2,11 @@ class VolunteersController < ApplicationController
   before_action :set_volunteer, only:[:edit, :update, :show]
   before_action :authenticate_user!
 
+  def listings
+    @volunteers = Volunteer.all
+
+  end
+
   def index
 
   end

@@ -8,6 +8,7 @@
 
 <% if  current_user.organization !=nil && current_user.organization.title !=nil %>
     <%= link_to "show your infor", organization_path(current_user.organization) %> 
+    <%= link_to "Edit your infor", edit_organization_path(current_user.organization) %> 
 
 <% else%>
     <%= link_to 'add your information', new_organization_path(current_user.organization)%>
