@@ -4,5 +4,12 @@
 
 <h1>Welcome to be a origization</h1>
 
+<h1>have not add your profile, add it here</h1>
 
-<%= link_to 'add your information', new_organization_path%>
+<% if  current_user.organization !=nil && current_user.organization.title !=nil %>
+    <%= link_to "show your infor", organization_path(current_user.organization) %> 
+
+<% else%>
+    <%= link_to 'add your information', new_organization_path(current_user.organization)%>
+<% end %>
+

@@ -3,19 +3,19 @@
 
 <%= form_with(model: @organization, local: true) do |form| %>
     <div>
-        <p><%= form.label :title %></p>
+        <%= form.label :title %>
         <%= form.text_field :title%>
     </div>
     <div>
-       <p> <%= form.label :description %></p>
+       <%= form.label :description %>
         <%= form.text_area :description %>
     </div>
     <div>
-       <p> <%= form.label :website %></p>
+       <%= form.label :website %>
         <%= form.text_area :website %>
     </div>
     <div>
-       <p> <%= form.label :location %></p>
+       <%= form.label :location %>
         <%= form.text_area :location %>
     </div>
   

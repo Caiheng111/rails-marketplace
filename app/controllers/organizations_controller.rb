@@ -1,6 +1,7 @@
 
 class OrganizationsController < ApplicationController
   before_action :set_organization, only:[:edit, :update, :show]
+  before_action :authenticate_user!
 
   def index
 
@@ -13,7 +14,8 @@ class OrganizationsController < ApplicationController
 
 
   def create
-    @organization=Organization.new(organization_params)
+    @organization=current_user.create_organization(organization_params)
+ 
     if @organization.save
         redirect_to organization_path(@organization)
     else

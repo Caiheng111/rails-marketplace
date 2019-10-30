@@ -1,5 +1,6 @@
 class VolunteersController < ApplicationController
   before_action :set_volunteer, only:[:edit, :update, :show]
+  before_action :authenticate_user!
 
   def index
 
@@ -12,7 +13,7 @@ class VolunteersController < ApplicationController
 
 
   def create
-    @volunteer=Volunteer.new(volunteer_params)
+    @volunteer=current_user.create_volunteer(volunteer_params)
     if @volunteer.save
         redirect_to volunteer_path(@volunteer)
     else
@@ -49,7 +50,7 @@ class VolunteersController < ApplicationController
     end
 
     def volunteer_params
-      params.require(:volunteer).permit(:name,:description, :email, :skill, :location, :experienmce)
+      params.require(:volunteer).permit(:name,:description, :email, :skill, :location, :experience, :picture)
     end
 
 

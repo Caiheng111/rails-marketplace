@@ -8,5 +8,6 @@
 <h1><%= @volunteer.skill %></h1>
 <h1><%= @volunteer.location %></h1>
 <p><%= @volunteer.experience %></p>
+<%= image_tag @volunteer.picture, class:"photo" if @volunteer.picture.attached? %>
 
 <%= link_to 'Post a project now' %>

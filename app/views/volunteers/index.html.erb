@@ -4,4 +4,9 @@
 <h1>Welcome to be a volunteer</h1>
 
 
-<%= link_to 'add your profile', new_volunteer_path%>
+<% if  current_user.volunteer !=nil && current_user.volunteer.name !=nil %>
+    <%= link_to "show your infor", volunteer_path(current_user.volunteer) %> 
+
+<% else%>
+    <%= link_to 'add your information', new_volunteer_path(current_user.volunteer)%>
+<% end %>

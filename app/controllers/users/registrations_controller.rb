@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -13,13 +13,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     super
     user = User.create(user_params)
-  
-    if user.user_type == "organization"
+    #   if user.user_type == "organization"
    
-      redirect_to organizations_index_path
+    #   redirect_to root_path and return organizations_path
 
-    end
-      
+    # end   
   end
 
   # GET /resource/edit
@@ -46,12 +44,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  protected
+  # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :email, :password_confirmation, :user_type])
-  end
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :email, :password_confirmation, :user_type])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params
