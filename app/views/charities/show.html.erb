@@ -1,10 +1,23 @@
 
 
 <h1><%= @charity.title %></h1>
+<% @charity.pictures.each do |picture| %>
+    <%= image_tag picture, class:"show-image", class:"picture" %>
+<% end %>
 <p><%= @charity.location %></p>
 <h1><%= @charity.project_leader %></h1>
 <h1><%= @charity.raised_goal %></h1>
 <h1><%= @charity.current_raised %></h1>
 <h6><%= @charity.summary %></h6>
-<h6><%= @charity.challenges %></h6>
-<h6><%= @charity.solution %></h6>
+<h4><%= @charity.challenges %></h4>
+<h4><%= @charity.solution %></h4>
+
+<h1>Organization Information</h1>
+<h1><%= current_user.organization.title %></h1>
+<p><%= current_user.organization.description %></p>
+<h1><%= current_user.organization.website %></h1>
+<h1><%= current_user.organization.location %></h1>
+
+
+
+<%= link_to 'delete this project', charity_path(@charity), method: :delete %>

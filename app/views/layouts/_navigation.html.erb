@@ -63,6 +63,7 @@
       <% if user_signed_in? && current_user.user_type=="organization" %>
         <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
         <li><%= link_to "Post a project", new_charity_path%> </li> 
+        <li><%= link_to "Our Projects", charities_path%> </li> 
         <li><%= link_to "profile", organizations_path %> </li>
       <% elsif user_signed_in? && current_user.user_type=="volunteer" %>
         <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 

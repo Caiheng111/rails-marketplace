@@ -1,20 +1,21 @@
 class CharitiesController < ApplicationController
 
-  before_action :set_charity, only:[:edit, :update, :show]
+  before_action :set_charity, only:[:edit, :update, :show, :destroy]
   before_action :authenticate_user!
 
   def index
-
+    @charities=Charity.all
   end
 
    
   def new
-    @charities=Charity.new
+    @charity=Charity.new
+
   end
 
 
   def create
-    @charity=current_user.charities.create(charity_params)
+    @charity=current_user.organization.charities.create(charity_params)
     if @charity.save
         redirect_to charity_path(@charity)
     else
@@ -39,6 +40,10 @@ class CharitiesController < ApplicationController
     
   end
 
+  def destroy
+    @charity.destroy
+    redirect_to charities_path
+  end
 
   private
 
@@ -46,8 +51,8 @@ class CharitiesController < ApplicationController
       @charity = Charity.find(params[:id])
     end
 
-    def charity
-      params.require(:charity).permit(:title,:location, :project_leader, :category_id,:raised_goal, :current_raised, :summary, :challenges,:solution)
+    def charity_params
+      params.require(:charity).permit(:title,:location, :project_leader, :category_id,:raised_goal, :current_raised, :summary, :challenges,:solution, pictures: [])
     end
 
 end

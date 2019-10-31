@@ -4,11 +4,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-
+  post '/charities/new', to: 'charities#create'
   get '/volunteers/listings', to: 'volunteers#listings'
   resources :organizations
   resources :volunteers
   resources :charities
+ 
 
  
 
