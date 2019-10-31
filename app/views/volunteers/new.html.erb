@@ -1,6 +1,6 @@
 
 
-
+<%=render 'errors/error', obj: @volunteer%>
 <%= form_with(model: @volunteer, local: true) do |form| %>
     <div>
         <p><%= form.label :name %></p>

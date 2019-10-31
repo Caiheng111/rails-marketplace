@@ -4,10 +4,13 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+
+  get '/volunteers/listings', to: 'volunteers#listings'
   resources :organizations
   resources :volunteers
+  resources :charities
 
-  get '/volunteers/listings', to: 'volunteers#istings'
+ 
 
 
   root 'pages#home'

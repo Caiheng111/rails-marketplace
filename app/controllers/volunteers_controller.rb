@@ -1,6 +1,6 @@
 class VolunteersController < ApplicationController
   before_action :set_volunteer, only:[:edit, :update, :show]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:listings]
 
   def listings
     @volunteers = Volunteer.all
@@ -42,11 +42,6 @@ class VolunteersController < ApplicationController
   def show
     
   end
-
-  # def destroy
-  #   @organization.destroy
-
-  # end
 
   private
 

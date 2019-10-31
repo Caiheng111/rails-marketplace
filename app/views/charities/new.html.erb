@@ -1,0 +1,49 @@
+
+
+
+
+
+<%= form_with(model: @charity, local: true) do |form| %>
+    <div>
+        <%= form.label :title %>
+        <%= form.text_field :title%>
+    </div>
+    <div>
+       <%= form.label :location %>
+        <%= form.text_field :location %>
+    </div>
+    <div>
+       <%= form.label :project_leader %>
+        <%= form.text_field :project_leader  %>
+    </div>
+
+    <div>
+      <%= form.label :category_id%>
+      <%= form.select :category_id , options_for_select(Category.all.collect{|u| [u.title,u.id]}) %>
+    </div>
+    <div>
+       <%= form.label :raised_goal %>
+        <%= form.number_field :raised_goal %>
+    </div>
+    <div>
+       <%= form.label :current_raised %>
+        <%= form.number_field :current_raised %>
+    </div>
+    <div>
+       <%= form.label :summary %>
+        <%= form.text_area :summary %>
+    </div>
+    <div>
+       <%= form.label :challenges %>
+        <%= form.text_area :challenges %>
+    </div>
+  
+    <div>
+       <%= form.label :solution %>
+        <%= form.text_area :solution %>
+    </div>
+  
+    <div>
+        <%= form.submit%>
+    </div>
+<% end %>

@@ -1,6 +1,6 @@
 class Volunteer < ApplicationRecord
 
-  validates :name, presence: true, length: { minimum: 3, maximum: 10 }
+  validates :name, presence: true, length: { minimum: 3, maximum: 20 }
   validates :description, presence: true, length: { minimum: 10, maximum: 1000 }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
