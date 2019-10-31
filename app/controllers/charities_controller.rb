@@ -4,7 +4,7 @@ class CharitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @charities=Charity.all
+    @charities=current_user.organization.charities
   end
 
    

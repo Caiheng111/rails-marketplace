@@ -8,12 +8,12 @@
      <div class="row">
         <% @charities.each do |charity| %>
               <div class="col-md-4  mx-auto">
-                <div class="photo">
-                  <% charity.pictures.each do |picture| %>
+              
+                <% charity.pictures.each do |picture| %>
                     <%= image_tag picture, class:"show-image", class:"index-picture" %>
                     <% break %>
                 <% end %>
-                </div>
+           
                 <div clas="infor">
 
                   <h1><%= charity.category.title%></h1>
@@ -27,6 +27,8 @@
                   </div>
                   <h3>Raised: $<%= charity.current_raised %></h3>
                   <h3>Raised: $<%= charity.raised_goal %></h3>
+                  <%= link_to 'Edit', edit_charity_path(charity) %>
+                  <%= link_to 'Delete', charity_path(charity), method: :delete %>
                 </div>    
               </div>
           

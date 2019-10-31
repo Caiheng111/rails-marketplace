@@ -43,7 +43,13 @@
     <div>
        <%= form.label :solution %>
         <%= form.text_area :solution %>
+
     </div>
+
+
+    <%= form.label :pictures %>
+     <%= form.file_field :pictures, accept:
+        'image/png,image/gif,image/jpeg,image/jpg',multiple: true %>
   
     <div>
         <%= form.submit%>
