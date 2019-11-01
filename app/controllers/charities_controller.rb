@@ -8,7 +8,7 @@ class CharitiesController < ApplicationController
     if(params.has_key?(:search))
       @charities = Charity.where(["title LIKE ?","%#{params[:search]}%"])
     else
-      @charities = Charity.all
+      @charities = Charity.paginate(page: params[:page],per_page:6)
 
     end
 

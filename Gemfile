@@ -10,6 +10,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'rails-ujs', '~> 0.1.0'
 gem 'font-awesome-sass', '~> 5.11.2'
 gem 'better_errors', '~> 2.5', '>= 2.5.1'
+gem 'will_paginate', '~> 3.1.5'
+gem 'bootstrap-will_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
