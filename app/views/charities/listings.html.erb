@@ -38,6 +38,7 @@
   <section>
 		<div class="container">
      <div class="row">
+  
         <% @charities.each do |charity| %>
               <div class="col-md-4  mx-auto">
                 <% charity.pictures.each do |picture| %>
@@ -63,9 +64,9 @@
 
                 </div>    
               </div> 
-          <%end%>
-       </div>
-       <div>
+        <%end%>
+   
+      <div>
         <%= will_paginate %>
       </div>
 		</div>

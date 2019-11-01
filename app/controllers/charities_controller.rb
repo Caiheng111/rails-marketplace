@@ -19,6 +19,7 @@ class CharitiesController < ApplicationController
     if (params.has_key?(:category))
       @charities = Charity.where(category:params[:category]).paginate(page: params[:page],per_page:3)
     end
+
   end
 
 
