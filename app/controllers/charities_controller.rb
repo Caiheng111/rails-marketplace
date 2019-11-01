@@ -13,13 +13,16 @@ class CharitiesController < ApplicationController
     end
 
     if (params.has_key?(:location))
-      @charities = Charity.where(location:params[:location])
+      @charities = Charity.where(location:params[:location]).paginate(page: params[:page],per_page:3)
     end
 
     if (params.has_key?(:category))
-      @charities = Charity.where(category:params[:category])
+      @charities = Charity.where(category:params[:category]).paginate(page: params[:page],per_page:3)
     end
   end
+
+
+
 
   def noResult
 
