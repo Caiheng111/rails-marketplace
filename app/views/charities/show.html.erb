@@ -12,12 +12,18 @@
 <h4><%= @charity.challenges %></h4>
 <h4><%= @charity.solution %></h4>
 
+
+<% if current_user.organization!= nil %>
 <h1>Organization Information</h1>
 <h1><%= current_user.organization.title %></h1>
 <p><%= current_user.organization.description %></p>
 <h1><%= current_user.organization.website %></h1>
 <h1><%= current_user.organization.location %></h1>
+<% end %>
 
-
-
-<%= link_to 'delete this project', charity_path(@charity), method: :delete %>
+<% if current_user.user_type="donor" %>
+    <button> <%= link_to 'Add To donation Listing' %></button>
+   
+<% else %>
+    <%= link_to 'delete this project', charity_path(@charity), method: :delete %>
+<% end %>
