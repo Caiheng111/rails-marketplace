@@ -4,20 +4,28 @@ class CharitiesController < ApplicationController
   before_action :authenticate_user!, :except => [:listings]
 
   def listings
-    # @charities = Charity.all
-
-    if (params.has_key?(:location))
-      @charities=Charity.where(location:params[:location])
+  
+    if(params.has_key?(:search))
+      @charities = Charity.where(["title LIKE ?","%#{params[:search]}%"])
     else
-      @charities=Charity.search(params[:search])
+      @charities = Charity.all
+
     end
 
-   
+    if (params.has_key?(:location))
+      @charities = Charity.where(location:params[:location])
+    end
 
+    if (params.has_key?(:category))
+      @charities = Charity.where(category:params[:category])
+    end
+  end
 
+  def noResult
 
 
   end
+
 
   def index
     @charities=current_user.organization.charities
