@@ -1,7 +1,23 @@
 class CharitiesController < ApplicationController
 
   before_action :set_charity, only:[:edit, :update, :show, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, :except => [:listings]
+
+  def listings
+    # @charities = Charity.all
+
+    if (params.has_key?(:location))
+      @charities=Charity.where(location:params[:location])
+    else
+      @charities=Charity.search(params[:search])
+    end
+
+   
+
+
+
+
+  end
 
   def index
     @charities=current_user.organization.charities

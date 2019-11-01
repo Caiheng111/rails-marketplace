@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
   post '/charities/new', to: 'charities#create'
   get '/volunteers/listings', to: 'volunteers#listings'
+  get '/charities/listings', to: 'charities#listings'
   resources :organizations
   resources :volunteers
   resources :charities
