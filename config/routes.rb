@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
 
+  get '/charities/listings', to: 'charities#listings'
+  post '/charities/new', to: 'charities#create'
+  
+
   resources :line_items
   resources :carts
+  resources :charities
   devise_for :users, controllers:{
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
   
-  post '/charities/new', to: 'charities#create'
+
   get '/volunteers/listings', to: 'volunteers#listings'
-  get '/charities/listings', to: 'charities#listings'
-  get '/charities/noresult', to: 'charities#noresult'
+
   resources :organizations
   resources :volunteers
-  resources :charities
- 
-
- 
 
 
   root 'pages#home'

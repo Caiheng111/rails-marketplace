@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_one :organization
   has_one :volunteer
   has_one :donor
+  has_many :charities
 end
