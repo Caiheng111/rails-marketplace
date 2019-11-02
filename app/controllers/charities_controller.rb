@@ -57,6 +57,8 @@ class CharitiesController < ApplicationController
   end
 
   def show
+
+    
     
   end
 

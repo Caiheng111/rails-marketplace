@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one :organization
   has_one :volunteer
+  has_one :donor
 end

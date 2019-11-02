@@ -40,10 +40,7 @@ class OrganizationsController < ApplicationController
     
   end
 
-  # def destroy
-  #   @organization.destroy
-
-  # end
+  
 
   private
 

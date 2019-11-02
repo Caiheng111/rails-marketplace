@@ -39,7 +39,6 @@
 		<div class="container">
      <div class="row">
       <% if @charities !=nil %>
-
         <% @charities.each do |charity| %>
             <div class="col-md-4  mx-auto">
               <% charity.pictures.each do |picture| %>
@@ -66,8 +65,6 @@
                   <button><%= link_to 'Edit', edit_charity_path(charity) %></button>
             
                 <% end %>
-
-
               </div>    
             </div> 
           <%end%>
