@@ -6,6 +6,7 @@ class Charity < ApplicationRecord
   belongs_to :category
   belongs_to :organization
   has_many_attached :pictures
+  has_many :line_items
 
 
 end
