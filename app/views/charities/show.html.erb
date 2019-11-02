@@ -13,6 +13,8 @@
 <h4><%= @charity.solution %></h4>
 
 
+
+
 <% if current_user.organization!= nil %>
 <h1>Organization Information</h1>
 <h1><%= current_user.organization.title %></h1>
@@ -21,9 +23,8 @@
 <h1><%= current_user.organization.location %></h1>
 <% end %>
 
-
-
-   <%= button_to 'Add to cart', line_items_path(charity_id: @charity), class: 'button is-warning add-to-cart' %>
+<h2> Donate $<%= @charity.donate_basic %> Now</h2>
+<%= button_to 'Add to cart', line_items_path(charity_id: @charity), class: 'button is-warning add-to-cart' %>
    
 
    

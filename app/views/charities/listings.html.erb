@@ -58,6 +58,7 @@
                 </div>
                 <h3>Current Raised: $<%= charity.current_raised %></h3>
                 <h3>Raise Goal: $<%= charity.raised_goal %></h3>
+                <h2> Donate $<%= charity.donate_basic %> Now</h2>
                 
                 <button><%= link_to 'Donate Now', charity_path(charity) %></button>
                 <% if user_signed_in? && current_user.admin? %>
