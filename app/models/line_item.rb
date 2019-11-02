@@ -2,7 +2,7 @@ class LineItem < ApplicationRecord
   belongs_to :charity
   belongs_to :cart
 
-  # def total_price
-  #   chairty.price.to_i * quantity.to_i
-  # end
+  def total_price
+    charity.donate_basic.to_i * quantity.to_i
+  end
 end

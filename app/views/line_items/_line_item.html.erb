@@ -1,0 +1,16 @@
+
+
+
+    <%= line_item.quantity %>
+
+    <strong><%= line_item.charity.title %></strong>
+   
+    <%= truncate(line_item.charity.summary, length: 10) %>
+
+
+    <strong class="f4"><%= number_to_currency(line_item.total_price) %></strong>
+  
+
+  <%= link_to 'Remove Item', line_item, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-small mb4" %>
+
+

@@ -1,4 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_cart_path(@cart) %> |
-<%= link_to 'Back', carts_path %>
+
+  
+
+  <%= link_to 'Keep Shopping', charities_listings_path, class: 'button is-warning' %>
+
+<hr />
+
+  <%= render(@cart.line_items) %> <br>
+
+  <%= button_to 'Empty Donation Listing', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
+
+   
+  <br>
+    <h4 class="title is-4">
+      <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
+    </h4>
+  </div>

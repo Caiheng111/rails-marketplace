@@ -60,6 +60,16 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
+        <% if total_cart_items %>
+          <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+          <span class="icon is-small">
+            <i class="fa fa-shopping-cart"></i>
+          </span>
+          <span>Cart
+            <%= cart_count_over_one %>
+            </span>
+          <% end %>
+        <% end %>
     
       <% if user_signed_in? && current_user.user_type=="organization" %>
         <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
