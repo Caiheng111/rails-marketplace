@@ -38,37 +38,49 @@
   <section>
 		<div class="container">
      <div class="row">
-  
+      <% if @charities !=nil %>
+
         <% @charities.each do |charity| %>
-              <div class="col-md-4  mx-auto">
-                <% charity.pictures.each do |picture| %>
-                    <%= image_tag picture, class:"show-image", class:"index-picture" %>
-                    <% break %>
-                <% end %>
-                <div clas="infor">
+            <div class="col-md-4  mx-auto">
+              <% charity.pictures.each do |picture| %>
+                  <%= image_tag picture, class:"show-image", class:"index-picture" %>
+                  <% break %>
+              <% end %>
+              <div clas="infor">
 
-                  <h1><%= charity.category.title%></h1>
-                  <h3><%= charity.title %></h3>
-                  <p><%= charity.summary.truncate(200) %></p>
+                <h1><%= charity.category.title%></h1>
+                <h3><%= charity.title %></h3>
+                <p><%= charity.summary.truncate(200) %></p>
 
-                  <div class="progress">
-                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%=((charity.current_raised).to_f/(charity.raised_goal).to_f) *100.0%>%;">
-                   
+                <div class="progress">
+                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%=((charity.current_raised).to_f/(charity.raised_goal).to_f) *100.0%>%;">
                 
-                    </div>
                   </div>
-                  <h3>Current Raised: $<%= charity.current_raised %></h3>
-                  <h3>Raise Goal: $<%= charity.raised_goal %></h3>
-                  
-                  <button><%= link_to 'Donate Now', charity_path(charity) %></button>
+                </div>
+                <h3>Current Raised: $<%= charity.current_raised %></h3>
+                <h3>Raise Goal: $<%= charity.raised_goal %></h3>
+                
+                <button><%= link_to 'Donate Now', charity_path(charity) %></button>
+                <% if user_signed_in? && current_user.admin? %>
+                  <button><%= link_to 'Delete', charity_path(charity), method: :delete %></button>
+                  <button><%= link_to 'Edit', edit_charity_path(charity) %></button>
+            
+                <% end %>
 
-                </div>    
-              </div> 
-        <%end%>
-   
-      <div>
-        <%= will_paginate %>
-      </div>
+
+              </div>    
+            </div> 
+          <%end%>
+          <div>
+            <%= will_paginate %>
+          </div>
+        
+      <% else %>
+        <div>
+          <h1>4004</h1>
+          <h1>Page you are looking is not found</h1>
+        </div>
+      <% end %>
 		</div>
     
 	</section>

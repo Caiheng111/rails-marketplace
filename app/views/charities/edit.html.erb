@@ -3,8 +3,6 @@
 
 
 
-
-
 <%= form_with(model: @charity, local: true) do |form| %>
     <div>
         <%= form.label :title %>
@@ -43,9 +41,7 @@
     <div>
        <%= form.label :solution %>
         <%= form.text_area :solution %>
-
     </div>
-
 
     <%= form.label :pictures %>
      <%= form.file_field :pictures, accept:

@@ -23,14 +23,6 @@ class CharitiesController < ApplicationController
   end
 
 
-
-
-  def noResult
-
-
-  end
-
-
   def index
     @charities=current_user.organization.charities
   end
