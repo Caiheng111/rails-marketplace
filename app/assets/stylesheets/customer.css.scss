@@ -11,17 +11,17 @@ body{
 
 
 .header{
-  font-size: 14px;
-  height: 50px;
-  background: #f6f4ee;
+  font-size: 13px;
+  height: 40px;
+  background: #F6F4EE;
   color:black;
-  line-height: 50px;
-  padding-left:100px;
+  line-height: 40px;
+  padding-left:70px;
  
 }
 .header .left-info{
   float: left;
-  margin-right: 450px;
+  margin-right: 600px;
 }
 
 .header span{
@@ -43,23 +43,40 @@ body{
 }
 
 
-// .navbar{
-//   background: black;
-//   opacity: .7;
-//   border-radius: 0;
-//   height: 70px;
-//   margin:0;
-//   border:0;
+.navbar a{
+  color:black !important;
+}
 
-// }
+.navbar-brand{
+  font-family: 'Merriweather', serif;
+  color:rgb(255, 180, 34) !important;
+  font-size: 22px;
 
-// .navbar a{
-//   color:black;
-// }
 
-.section{
-  height: 1000px;
-  background: black;
+}
+
+
+.navbar{
+  background: rgb(255, 180, 34);
+  
+  margin:0;
+  padding:0;
+  border:none;
+  border-radius: 0;
+
+  font-size: 14px;
+  padding-top:5px;
+  padding-left:50px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+
+
+}
+
+
+
+.dropdown-toggle{
+  z-index: 10;
 }
 
 .carousel-caption{
