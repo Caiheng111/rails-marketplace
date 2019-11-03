@@ -58,19 +58,16 @@ body{
 
 .navbar{
   background: rgb(255, 180, 34);
-  
   margin:0;
   padding:0;
   border:none;
   border-radius: 0;
-
   font-size: 14px;
   padding-top:5px;
   padding-left:50px;
+  padding-right: 40px;
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
-
-
 }
 
 
@@ -79,36 +76,15 @@ body{
   z-index: 10;
 }
 
-.carousel-caption{
-  margin-left:-50rem;
-
-  margin-bottom:25rem;
-  padding:0;
-
-}
-.carousel-caption span{
-  font-weight: 1000;
-  font-size: 60px;
-  font-family: 'Merriweather', serif;
+.a-commenting{
+  font-size: 14px;
 
 }
 
-.top-text{
-  margin-left:-22rem;
+.dropdown-toggle{
+
+  background: rgb(255, 180, 34) !important;
 }
-
-.carousel-caption .yellow{
- color:rgb(255, 180, 34);
- font-weight: 1000;
-  font-size: 60px;
-  font-family: 'Merriweather', serif;
-
-}
-
-
-
-
-
 
 
 

@@ -1,60 +1,104 @@
 
 
 
+<div class="home">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
 
-
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <div class="item active">
-    <%= image_tag "home-bg-1.jpg", alt: "home-bg-1.jpg",class:"home-bg"  %>
-      <div class="carousel-caption">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+      <%= image_tag "home-bg-1.jpg", alt: "home-bg-1.jpg",class:"home-bg"  %>
+        <div class="carousel-caption">
+          <span class="top-text">Help The</span> <br>
+          <span><span class="yellow">Children</span> In Need</span>
+          <p>Even the smallest of donations can help change a life</p>
+          <%= link_to 'View More', class:'view-more'%>
+        </div>
+      </div>
+      <div class="item">
+        <%= image_tag "home-bg-2.jpg", alt: "home-bg-2.jpg",class:"h0me-bg" %>
+        <div class="carousel-caption">
         <span class="top-text">Help The</span> <br>
-        <span><span class="yellow">Children</span> In Need</span>
-        <p>Even the smallest of donations can help change a life</p>
-        <%= button_to 'View More'%>
+          <span><span class="yellow">Education</span> In Need</span>
+          <p>Even the smallest of donations can help change a life</p>
+          <button>Donate Now</button>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <%= image_tag "home-bg-2.jpg", alt: "home-bg-2.jpg",class:"h0me-bg" %>
-      <div class="carousel-caption">
-      <span class="top-text">Help The</span> <br>
-        <span><span class="yellow">Children</span> In Need</span>
-        <p>Even the smallest of donations can help change a life</p>
-        <button>Donate Now</button>
+      <div class="item">
+        <%= image_tag "home-bg-4.jpg", alt: "home-bg-3.jpg",class:"h0me-bg" %>
+        <div class="carousel-caption">
+        <span class="top-text">Help The</span> <br>
+          <span><span class="yellow">Rhino</span> In Need</span>
+          <p>Even the smallest of donations can help change a life</p>
+          <button>Donate Now</button>
+        </div>
       </div>
-    </div>
-    <div class="item">
-      <%= image_tag "home-bg-4.jpg", alt: "home-bg-3.jpg",class:"h0me-bg" %>
-      <div class="carousel-caption">
-      <span class="top-text">Help The</span> <br>
-        <span><span class="yellow">Children</span> In Need</span>
-        <p>Even the smallest of donations can help change a life</p>
-        <button>Donate Now</button>
+      <div class="item">
+        <%= image_tag "home-bg-3.jpg", alt: "home-bg-4.jpg",class:"h0me-bg" %>
+        <div class="carousel-caption">
+        <span class="top-text">Help The</span> <br>
+          <span><span class="yellow">Elephants</span> In Need</span>
+          <p>Even the smallest of donations can help change a life</p>
+          <button>Donate Now</button>
+        </div>
       </div>
+    
     </div>
-    <div class="item">
-      <%= image_tag "home-bg-3.jpg", alt: "home-bg-4.jpg",class:"h0me-bg" %>
-      <div class="carousel-caption">
-      <span class="top-text">Help The</span> <br>
-        <span><span class="yellow">Children</span> In Need</span>
-        <p>Even the smallest of donations can help change a life</p>
-        <button>Donate Now</button>
-      </div>
-    </div>
-  
+
   </div>
 
-  <!-- Controls -->
+
+  <div class="projects">
+
+    <div class="row ">
+    <div class="col-md-4  mx-auto clear-padding-col clear-padding-row">
+      <div class="project-one clear-col">
+          <h1>Today is the day to  <br>
+          reach out and lend a  <br>
+          helping hand</h1>
+          <%= link_to 'Donate Now', class:"donate-button" %>
+      </div>
+    </div>
+    <div class="col-md-4  mx-auto clear-col">
+    <div class="project-two">
+          <h1>Even the smallest of<br> donations can help change a life</h1>
+          <button>Donate Now</button>
+      </div>
+    
+    </div>
+    <div class="col-md-4  mx-auto clear-col">
+      <div class="project-three">
+          <h1>Become a volunteer. You’ll feel the <br>benefits instantly</h1>
+          <button>Donate Now</button>
+      </div>
+
+    </div>
+    </div>
+
+
+
+
+  </div>
+
+  <div class="aboutUs">
+    <div class="container">
+      <h3>GoodGiving connects nonprofits, donors, and companies in nearly every country around the world. We help local nonprofits access the funding, tools, training, and support they need to become more effective.</h3>
+
+      <button class="info">Know More</button>
+    </div>
+
+  </div>
+
 
 </div>
+
+
 

@@ -3,7 +3,124 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-.home-bg{
-  z-index: -10;
+body, h1{
+  margin:0;
+  padding:0;
+}
+
+.home{
+  height: 1500px;
+}
+
+.clear-padding{
+  padding:0;
+}
+.clear-row{
+  padding-left:0;
+  padding-right:0;
+}
+.clear-col{
+  margin:0;
+  padding:0;
+}
+
+.carousel-caption{
+  margin-left:-50rem;
+  margin-bottom:25rem;
+  padding:0;
 
 }
+.carousel-caption span{
+  font-weight: 1000;
+  font-size: 60px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.top-text{
+  margin-left:-22rem;
+}
+
+.carousel-caption .yellow{
+ color:rgb(255, 180, 34);
+ font-weight: 1000;
+  font-size: 60px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.project{
+ width: 480px;
+}
+
+.project-one{
+
+height: 300px;
+width: 490px;
+background-image: url('project3.jpg');
+background-size: cover;
+}
+
+.project-two{
+  height: 300px;
+  width: 490px;
+  background-image: url('project1.jpg');
+  background-size: cover;
+  }
+
+.project-three{
+  height: 300px;
+  width: 490px;
+  background-image: url('project2.jpg');
+  background-size: cover;
+}
+.projects{
+  overflow: hidden;
+}
+
+.projects h1{
+  padding-top: 150px;
+  padding-left: 105px;
+  color:white;
+  font-family: 'Merriweather', serif;
+  font-size: 35px;
+ 
+}
+
+.donate-button{
+  display: block;
+  height: 50px;
+  width: 100px;
+  border:1 solid white;
+}
+
+.aboutUs h3{
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.aboutUs .container{
+  text-align:center;
+  padding-top:100px;
+  padding-left:120px;
+  padding-right: 120px;
+}
+
+.aboutUs .info{
+  margin-top:50px;
+  display: inline-block;
+  height: 50px;
+  width: 150px;
+  outline:0;
+  background: rgb(255, 180, 34);
+  border-radius: 25px;
+  border:0;
+  font-size: 18px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+
+
+
