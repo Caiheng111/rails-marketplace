@@ -22,7 +22,15 @@
 <h1><%=@charity.organization.website %></h1>
 <h1><%=@charity.organization.location %></h1>
 
-<%= button_to "Message #{@charity.organization.title}" %>
+    
+<% if user_signed_in? && current_user.id != @charity.organization.user_id %>
+    <%= link_to "Message #{@charity.organization.title}", conversations_path(sender_id: current_user.id, recipient_id: @charity.organization.user_id), method: 'post', class:"button is-link" %>
+<% elsif user_signed_in? && current_user.id == @charity.organization.user_id  %>
+    <%= link_to "Conversations", conversations_path %>
+<% else %>
+    <%= link_to "Sign up to message #{@chairty.organization.title}", new_user_registration_path %>
+<% end %>
+
 
 
 

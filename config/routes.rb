@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get '/charities/listings', to: 'charities#listings'
   post '/charities/new', to: 'charities#create'
+
+  resources :conversations do
+    resources :messages
+  end
   
 
   resources :line_items
