@@ -2,7 +2,7 @@
 
   
 
-  <%= link_to 'Keep Shopping', charities_listings_path, class: 'button is-warning' %>
+  <%= link_to 'Keep Donating', charities_listings_path, class: 'button is-warning' %>
 
 <hr />
 
@@ -15,4 +15,6 @@
     <h4 class="title is-4">
       <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
     </h4>
+
+    <button><%= link_to 'go to pay' %></button>
   </div>
