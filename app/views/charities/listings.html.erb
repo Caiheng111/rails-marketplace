@@ -49,8 +49,8 @@
               <% end %>
               <div clas="infor">
 
-                <h1><%= charity.category.title%></h1>
-                <h3><%= charity.title %></h3>
+                <h3><%= link_to charity.title, charity_path(charity) %></h3>
+                <h3><%= charity.category.title %></h3>
                 <p><%= charity.summary.truncate(200) %></p>
 
                 <div class="progress">
@@ -61,8 +61,7 @@
                 <h3>Current Raised: $<%= charity.current_raised %></h3>
                 <h3>Raise Goal: $<%= charity.raised_goal %></h3>
                 <h2> Donate $<%= charity.donate_basic %> Now</h2>
-                
-                <button><%= link_to 'Donate Now', charity_path(charity) %></button>
+              
                 <% if user_signed_in? && current_user.admin? %>
                   <button><%= link_to 'Delete', charity_path(charity), method: :delete %></button>
                   <button><%= link_to 'Edit', edit_charity_path(charity) %></button>

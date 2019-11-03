@@ -15,15 +15,18 @@
 
 
 
-<% if current_user.organization!= nil %>
-<h1>Organization Information</h1>
-<h1><%= current_user.organization.title %></h1>
-<p><%= current_user.organization.description %></p>
-<h1><%= current_user.organization.website %></h1>
-<h1><%= current_user.organization.location %></h1>
-<% end %>
 
-<h2> Donate $<%= @charity.donate_basic %> Now</h2>
+<h1>Organization Information</h1>
+<h1><%=@charity.organization.title %></h1>
+<p><%=@charity.organization.description %></p>
+<h1><%=@charity.organization.website %></h1>
+<h1><%=@charity.organization.location %></h1>
+
+<%= button_to "Message #{@charity.organization.title}" %>
+
+
+
+<h2> Donate from $<%= @charity.donate_basic %> Now</h2>
 <%= button_to 'Add to cart', line_items_path(charity_id: @charity), class: 'button is-warning add-to-cart' %>
    
 
