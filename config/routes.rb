@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   root 'pages#home'
-  devise_for :users
-  # , controllers:{
-  #   sessions: 'users/sessions',
-  #   registrations: 'users/registrations'
-  # }
+  devise_for :users, controllers:{
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
   get '/charities/listings', to: 'charities#listings'
   post '/charities/new', to: 'charities#create'
