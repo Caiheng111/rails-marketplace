@@ -49,43 +49,92 @@ body, h1{
 
 }
 
+.carousel-caption p{
+ 
+  font-weight: 1000;
+   font-size: 20px;
+   font-family: 'Merriweather', serif;
+ 
+ }
+
 .project{
  width: 480px;
 }
 
 .project-one{
+  position: relative;
 
-height: 300px;
-width: 490px;
-background-image: url('project3.jpg');
-background-size: cover;
+  height: 300px;
+  width: 490px;
+  background-image: url('project3.jpg');
+  background-size: cover;
+  transition: all 0.6s;
+  cursor: pointer;
 }
 
 .project-two{
+  position: relative;
   height: 300px;
   width: 490px;
   background-image: url('project1.jpg');
   background-size: cover;
+  transition: all 0.6s;
+  cursor: pointer;
   }
 
 .project-three{
+  position: relative;
   height: 300px;
   width: 490px;
   background-image: url('project2.jpg');
   background-size: cover;
+  transition: all 0.6s;
+  cursor: pointer;
 }
 .projects{
   overflow: hidden;
 }
 
 .projects h1{
-  padding-top: 150px;
-  padding-left: 105px;
+  position: absolute;
+  top:120px;
+  left:150px;
   color:white;
   font-family: 'Merriweather', serif;
-  font-size: 35px;
+  font-size: 30px;
  
 }
+
+.donate-button2{
+  
+  position: absolute;
+  top:230px;
+  left:320px;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+  height: 40px;
+  width: 130px;
+ background: white;
+  border-radius: 30px;
+  font-size: 16px;
+  color:black;
+  text-decoration: none;
+}
+
+.project-one:hover{
+  transform: scale(1.1);
+}
+
+.project-two:hover{
+  transform: scale(1.1);
+}
+
+.project-three:hover{
+  transform: scale(1.1);
+}
+
+
 
 .donate-button1{
   margin-left:-340px;
@@ -108,6 +157,8 @@ background-size: cover;
   border-color:rgb(255, 180, 34);
 
 }
+
+
 
 
 

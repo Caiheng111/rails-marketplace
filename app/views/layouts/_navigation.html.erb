@@ -54,6 +54,8 @@
         
 
       <% elsif user_signed_in? && current_user.user_type=="volunteer" %>
+        <li>Welcome Back ! <%= current_user.volunteer.name %></li>
+        
         <li><%= link_to "profile", volunteers_path %> </li>
         <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
       <% elsif user_signed_in? && current_user.user_type=="donor" ||user_signed_in? && current_user.admin?  %>

@@ -2,7 +2,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-body{
+body, h2,h1{
   margin:0;
   padding:0;
 }
@@ -85,6 +85,90 @@ body{
 
   background: rgb(255, 180, 34) !important;
 }
+
+
+// login page
+
+.section-login{
+  height: 800px;
+}
+
+.section-login .image{
+  height: 800px;
+  background-image: url('login.jpg');
+  background-repeat: no-repeat;
+
+}
+
+.section-login .login{
+  padding-top:130px;
+}
+
+.login{
+  padding-left:70px;
+  width: 500px;
+}
+
+.login h2{
+  font-size: 30px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.login h3{
+
+  font-size: 15px;
+  font-family: 'Merriweather', serif;
+  color:rgb(255, 180, 34);
+
+}
+
+.login .login-label{
+  margin-top:20px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  // font-family: 'Merriweather', serif;
+  border-radius:0;
+ 
+}
+
+.login .form-control{
+  height: 40px;
+  border-radius: 0;
+  font-size: 15px;
+}
+
+
+.login .form-control:focus{
+    border-color:rgb(255, 180, 34);
+    box-shadow:none;
+ 
+}
+
+.login-button{
+  margin-top:20px;
+  width: 430px;
+  height: 30px;
+  background: rgb(255, 180, 34);
+  border:none;
+  font-size:18px;
+}
+
+.title{
+  font-size: 15px;
+  text-decoration: none;
+  color:black;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
