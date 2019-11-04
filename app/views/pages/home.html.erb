@@ -15,39 +15,39 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-      <%= image_tag "home-bg-1.jpg", alt: "home-bg-1.jpg",class:"home-bg"  %>
+      <%= image_tag "home-bg-1.jpg", alt: "home-bg-1.jpg" %>
         <div class="carousel-caption">
           <span class="top-text">Help The</span> <br>
           <span><span class="yellow">Children</span> In Need</span>
           <p>Even the smallest of donations can help change a life</p>
-          <%= link_to 'View More', class:'view-more'%>
+          <%= link_to 'View More', charity_path(id:"20"), class: "donate-button1" %>
         </div>
       </div>
       <div class="item">
-        <%= image_tag "home-bg-2.jpg", alt: "home-bg-2.jpg",class:"h0me-bg" %>
+        <%= image_tag "home-bg-3.jpg", alt: "home-bg-4.jpg" %>
         <div class="carousel-caption">
         <span class="top-text">Help The</span> <br>
           <span><span class="yellow">Education</span> In Need</span>
           <p>Even the smallest of donations can help change a life</p>
-          <button>Donate Now</button>
+           <%= link_to 'View More', charity_path(id:"7"), class: "donate-button1" %>
         </div>
       </div>
       <div class="item">
-        <%= image_tag "home-bg-4.jpg", alt: "home-bg-3.jpg",class:"h0me-bg" %>
+        <%= image_tag "home-bg-4.jpg", alt: "home-bg-2.jpg"%>
         <div class="carousel-caption">
         <span class="top-text">Help The</span> <br>
           <span><span class="yellow">Rhino</span> In Need</span>
           <p>Even the smallest of donations can help change a life</p>
-          <button>Donate Now</button>
+           <%= link_to 'View More', charity_path(id:"18"), class: "donate-button1" %>
         </div>
       </div>
       <div class="item">
-        <%= image_tag "home-bg-3.jpg", alt: "home-bg-4.jpg",class:"h0me-bg" %>
+        <%= image_tag "home-bg-2.jpg", alt: "home-bg-3.jpg"%>
         <div class="carousel-caption">
         <span class="top-text">Help The</span> <br>
           <span><span class="yellow">Elephants</span> In Need</span>
           <p>Even the smallest of donations can help change a life</p>
-          <button>Donate Now</button>
+           <%= link_to 'View More', charity_path(id:"22"), class: "donate-button1" %>
         </div>
       </div>
     
