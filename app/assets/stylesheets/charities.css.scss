@@ -1,0 +1,106 @@
+// Place all the styles related to the charities controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+// create charuty page
+
+.section-charity{
+  height: 1100px;
+}
+
+.section-charity .image-charity{
+  height: 1100px;
+  background-image: url('charity-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;;
+
+}
+
+.section-charity .charity-infor{
+  padding-top:100px;
+}
+
+.charity-infor{
+  padding-left:70px;
+  width: 500px;
+}
+
+.charity-infor h2{
+  font-size: 30px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.charity-infor h3{
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+  color:rgb(255, 180, 34);
+
+}
+  
+
+.charity-infor .volun-lable{
+  margin-top:14px;
+  margin-bottom: 12px;
+  font-size: 16px;
+
+ 
+}
+
+.charity-infor .form-control{
+  height: 40px;
+  border-radius:0;
+  font-size: 15px;
+}
+
+
+.charity-infor .form-control:focus{
+    border-color:rgb(255, 180, 34);
+    box-shadow:none;
+ 
+}
+
+.charity-submit{
+  margin-top:20px;
+  width: 430px;
+  height: 30px;
+  background: rgb(255, 180, 34);
+  border:none;
+  font-size:18px;
+}
+
+.picture-charity{
+  display:block;
+  height: 40px;
+  width: 100px;
+  background:transparent;
+
+}
+
+
+
+
+
+
+
+
+
+// show page
+.picture{
+  height: 300px;
+  width: 450px;
+}
+
+// index page
+
+.index-picture{
+  height: 250px;
+
+}
+
+.infor{
+  background: #f6f4ee;
+}

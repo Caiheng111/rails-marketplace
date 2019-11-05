@@ -3,55 +3,99 @@
 
 
 
-<%= form_with(model: @charity, local: true) do |form| %>
-    <div>
-        <%= form.label :title %>
-        <%= form.text_field :title%>
-    </div>
-    <div>
-       <%= form.label :location %>
-        <%= form.text_field :location %>
-    </div>
-    <div>
-       <%= form.label :project_leader %>
-        <%= form.text_field :project_leader  %>
-    </div>
 
-    <div>
-      <%= form.label :category_id%>
-      <%= form.select :category_id , options_for_select(Category.all.collect{|u| [u.title,u.id]}) %>
-    </div>
-    <div>
-       <%= form.label :raised_goal %>
-        <%= form.number_field :raised_goal %>
-    </div>
-    <div>
-       <%= form.label :current_raised %>
-        <%= form.number_field :current_raised %>
-    </div>
-    <div>
-       <%= form.label :summary %>
-        <%= form.text_area :summary %>
-    </div>
-    <div>
-       <%= form.label :challenges %>
-        <%= form.text_area :challenges %>
-    </div>
-  
-    <div>
-       <%= form.label :solution %>
-        <%= form.text_area :solution %>
-    </div>
-    <div>
-       <%= form.label :donate_basic %>
-        <%= form.number_field :donate_basic %>
-    </div>
 
-    <%= form.label :pictures %>
-     <%= form.file_field :pictures, accept:
-        'image/png,image/gif,image/jpeg,image/jpg',multiple: true %>
-  
-    <div>
-        <%= form.submit%>
+
+
+
+<%=render 'errors/error', obj: @charity%>
+<div class="section-charity">
+  <div class="row ">
+    <div class="col-md-6  mx-auto clear-padding-col clear-padding-row">
+      <div class="image-charity">  
+      </div>
+      
     </div>
-<% end %>
+    <div class="col-md-6  mx-auto clear-col">
+      <div class="charity-infor">
+        <h2>Welcome!</h2>
+        
+        <h3>Post A Project that Your Community Needs </h3>
+
+        <%= form_with(model: @charity, local: true) do |form| %>
+         
+            <div class="form-group">
+                <%= form.label :Title , class:'charity-label'%><br />
+                <%= form.text_field :title, autofocus: true, autocomplete: "Enter you name",class:"form-control" %>
+              
+            </div>
+
+            <div class="field">
+                <%= form.label :Location , class:'charity-lable'%><br />
+                <%= form.text_area :location, autofocus: true, autocomplete: "Description",class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+                <%= form.label :project_leader , class:'charity-lable'%><br />
+                <%= form.text_area :project_leader, autofocus: true, autocomplete: "project_leader",class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+                <%= form.label :category , class:'charity-lable'%><br />
+                <%= form.select :category_id , options_for_select(Category.all.collect{|u| [u.title,u.id]}) %>
+            </div>
+            
+
+            <div class="form-group">
+                <%= form.label :'raised of goal' , class:'charity-lable'%>
+                 <div class="input-group">
+                    <div class="input-group-addon">AUD</div>
+                    <%= form.number_field :raised_goal, autofocus: true, class:"form-control", id:"exampleInputAmount"  %>
+                </div>
+            </div>
+           
+
+            <div class="form-group">
+                <%= form.label :current_raised , class:'charity-lable'%>
+                 <div class="input-group">
+                    <div class="input-group-addon">AUD</div>
+                    <%= form.number_field :current_raised, autofocus: true, class:"form-control", id:"exampleInputAmount"  %>
+                </div>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :summary , class:'charity-lable'%><br />
+                <%= form.text_area :summary, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.label :Challenges , class:'charity-lable'%><br />
+                <%= form.text_area :challenges, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.label :Solution , class:'charity-lable'%><br />
+                <%= form.text_area :Solution, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.label :donate_basic , class:'charity-lable'%><br />
+                <%= form.text_area :donate_basic, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+            </div>
+
+             <div>
+                 <%= form.file_field :pictures, accept:
+                     'image/png,image/gif,image/jpeg,image/jpg',multiple: true %>
+            </div>
+
+            <div>
+                <%= form.submit "Submit",class:'charity-submit'%>
+            </div>
+
+        <% end %>
+
+      </div>
+    </div>    
+  </div>
+</div>
+
+
+
+

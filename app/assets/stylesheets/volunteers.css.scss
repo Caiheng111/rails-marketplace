@@ -1,0 +1,121 @@
+// Place all the styles related to the volunteers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.section-volun .image{
+  height: 330px;
+  background-image: url('volunteer.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  background: none;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+.container h1{
+  margin-top:100px;
+  margin-bottom: 80px;
+}
+
+.container h4{
+  font-family: 'Open Sans', sans-serif;
+}
+
+.volunteer-picture{
+  height: 300px;
+  transition: all 0.6s;
+  cursor: pointer;
+}
+
+.volunteer-picture:hover{
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.pictures-volu{
+  padding-top: 100px;
+}
+
+.volun-info{
+  margin-top:20px;
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+
+
+
+// vlounteer information page
+
+.section-volunteer{
+  height: 1000px;
+}
+
+.section-volunteer .image-volun{
+  height: 1000px;
+  background-image: url('volunteer-create.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;;
+
+}
+
+.section-volunteer .vlounteer-info{
+  padding-top:100px;
+}
+
+.vlounteer-info{
+  padding-left:70px;
+  width: 500px;
+}
+
+.vlounteer-info h2{
+  font-size: 30px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.vlounteer-info h3{
+  font-size: 18px;
+  font-family: 'Merriweather', serif;
+  color:rgb(255, 180, 34);
+
+}
+  
+
+.vlounteer-info .volun-lable{
+  margin-top:14px;
+  margin-bottom: 12px;
+  font-size: 16px;
+
+ 
+}
+
+.vlounteer-info .form-control{
+  height: 40px;
+  border-radius:0;
+  font-size: 15px;
+}
+
+
+.vlounteer-info .form-control:focus{
+    border-color:rgb(255, 180, 34);
+    box-shadow:none;
+ 
+}
+
+.volunteer-create{
+  margin-top:20px;
+  width: 430px;
+  height: 30px;
+  background: rgb(255, 180, 34);
+  border:none;
+  font-size:18px;
+}
+

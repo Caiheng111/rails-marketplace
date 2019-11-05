@@ -116,18 +116,18 @@ body, h2,h1{
 }
 
 .login h3{
-
-  font-size: 15px;
+  font-size: 18px;
   font-family: 'Merriweather', serif;
   color:rgb(255, 180, 34);
 
 }
+  
 
 .login .login-label{
   margin-top:20px;
   margin-bottom: 12px;
   font-size: 16px;
-  // font-family: 'Merriweather', serif;
+ 
   border-radius:0;
  
 }
@@ -155,10 +155,107 @@ body, h2,h1{
 }
 
 .title{
+  display: block;
   font-size: 15px;
   text-decoration: none;
   color:black;
+  margin-top:15px;
 }
+
+.title:hover{
+  text-decoration: none;
+  color:rgb(255, 180, 34);
+}
+
+
+.title-password{
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
+  color:rgb(255, 180, 34);
+}
+
+.title-password:hover{
+  text-decoration: none;
+  color:rgb(255, 180, 34);
+}
+
+
+
+// sign Up page
+
+
+.section-signup{
+  height: 800px;
+}
+
+.section-signup .image-signup{
+  height: 800px;
+  background-image: url('signup-bg.jpg');
+  background-repeat: no-repeat;
+
+}
+
+.section-signup .signup{
+  padding-top:110px;
+}
+
+.signup{
+  padding-left:70px;
+  width: 500px;
+}
+
+.signup h2{
+  font-size: 30px;
+  font-family: 'Merriweather', serif;
+
+}
+
+
+.signup h3{
+  font-size: 18px;
+  font-family: 'Merriweather', serif;
+  color:rgb(255, 180, 34);
+
+}
+
+.signup .signup-label{
+  margin-top:15px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  border-radius:0;
+ 
+}
+
+.signup .form-control{
+  height: 40px;
+  border-radius: 0;
+  font-size: 15px;
+}
+
+
+.signup .form-control:focus{
+    border-color:rgb(255, 180, 34);
+    box-shadow:none;
+ 
+}
+
+.signup-button{
+  margin-top:20px;
+  width: 430px;
+  height: 30px;
+  background: rgb(255, 180, 34);
+  border:none;
+  font-size:18px;
+}
+
+
+
+
+
+
+
+
 
 
 

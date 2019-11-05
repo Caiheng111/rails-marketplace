@@ -1,24 +1,43 @@
 
 
 
-<h1> Meet Our Volunteers</h1>
-<h6> The volunteers help nonprofits from Afghanistan to Zimbabwe (and hundreds of places in between) access the tools, training, and support they need to be more effective and make our world a better place.</h6>
+<div class="section-volun">
 
-  <section>
-		<div class="container">
-     <% @volunteers.each do |volunteer| %>
-        <div class="row">
-          <div class="col-12 col-lg-8 mx-auto">
-            <div class="photo">
-              <%= image_tag volunteer.picture if volunteer.picture.attached? %>
+  <div class="image">
+  
+  </div>
+
+  <div class="container">
+    <div class="infor-volu">
+      <h1> Meet Our Volunteers</h1>
+      <h4> The volunteers help nonprofits from Afghanistan to Zimbabwe (and hundreds of places in between) access the tools, training, and support they need to be more effective and make our world a better place.</h4>
+    
+    </div>
+
+    <div class="row">
+      <div class="pictures-volu">
+        <% @volunteers.each do |volunteer| %>
+          <div class="col-md-4  mx-auto">
+            
+                <div class="photo">
+                  <%= image_tag volunteer.picture , class:"volunteer-picture"%>
+                </div>
+                <div class="volun-info">
+                  <%= volunteer.name %>
+                </div>
             </div>
-            <div>
-              <%= volunteer.skill %>
-            </div>
-               
-          </div>
-        </div>
-      <%end%>
-		</div>
-	</section>
+        <%end%>
+      </div>
+      
+    </div>
+
+  </div>
+</div>
+
+
+
+
+	
+     
+
  

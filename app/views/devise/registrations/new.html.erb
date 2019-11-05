@@ -1,39 +1,63 @@
-<h2>Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+
+
+
+
+
+
+
+<div class="section-signup">
+  <div class="row ">
+    <div class="col-md-6  mx-auto clear-padding-col clear-padding-row">
+      <div class="image-signup">  
+      </div>
+      
+    </div>
+    <div class="col-md-6  mx-auto clear-col">
+      <div class="signup">
+        <h2>New To Good Giving?</h2>
+        <h3>Join us today! It takes only few steps</h3>
+
+      
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="form-group">
+               <%= f.label :email ,class:"signup-label" %><br />
+               <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control"  %>
+            </div>
+
+            <div class="field">
+              <%= f.label :user_type ,class:"signup-label"  %>
+              <%= f.select :user_type , options_for_select(["organization","volunteer","donor"].collect {|p| [ p ] }, { include_blank: true }) %>
+
+            </div>
+
+            <div class="form-group">
+             <%= f.label :password,class:"signup-label"  %>
+             <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password",class:"form-control"  %>  
+            </div>
+
+            <div class="form-group">
+              <%= f.label :password_confirmation,class:"signup-label"  %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password",class:"form-control"  %>
+            </div>
+             <%= f.submit "Sign up" , class:'signup-button'%>
+
+  
+
+            <%= render "devise/shared/links" %>
+        <% end %>
+
+      </div>
+    </div>    
   </div>
+</div>
 
 
 
-  <div class="field">
-    <%= f.label(:user_type) %>
-     <%= f.select :user_type , options_for_select(["organization","volunteer","donor"].collect {|p| [ p ] }, { include_blank: true })%>
 
-  </div>
-
-
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>

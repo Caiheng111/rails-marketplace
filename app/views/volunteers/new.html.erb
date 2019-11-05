@@ -1,37 +1,69 @@
 
 
+
 <%=render 'errors/error', obj: @volunteer%>
-<%= form_with(model: @volunteer, local: true) do |form| %>
-    <div>
-        <p><%= form.label :name %></p>
-        <%= form.text_field :name%>
+<div class="section-volunteer">
+  <div class="row ">
+    <div class="col-md-6  mx-auto clear-padding-col clear-padding-row">
+      <div class="image-volun">  
+      </div>
+      
     </div>
-    <div>
-       <p> <%= form.label :description %></p>
-        <%= form.text_area :description %>
-    </div>
-    <div>
-       <p> <%= form.label :Email %></p>
-        <%= form.text_area :email %>
-    </div>
-    <div>
-       <p> <%= form.label :Skill %></p>
-        <%= form.text_area :skill %>
-    </div>
-    <div>
-       <p> <%= form.label :Location %></p>
-        <%= form.text_area :location %>
-    </div>
-    <div>
-       <p> <%= form.label :experienxe %></p>
-        <%= form.text_area :experience %>
-    </div>
-    <div>
-        <%= form.label :picture %> <%= form.file_field :picture, accept:
-        'image/png,image/gif,image/jpeg,image/jpg' %>
-    </div>
-  
-    <div>
-        <%= form.submit %>
-    </div>
-<% end %>
+    <div class="col-md-6  mx-auto clear-col">
+      <div class="vlounteer-info">
+        <h2>Welcome To Good Giving</h2>
+        
+        <h3>To be a Volunteer Today! It takes only few steps</h3>
+
+      
+
+        <%= form_with(model: @volunteer, local: true) do |form| %>
+         
+            <div class="form-group">
+                <%= form.label :name , class:'volun-lable'%><br />
+                <%= form.text_field :name, autofocus: true, autocomplete: "Enter you name",class:"form-control" %>
+              
+            </div>
+
+            <div class="field">
+                <%= form.label :description , class:'volun-lable'%><br />
+                <%= form.text_area :description, autofocus: true, autocomplete: "Description",class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+                <%= form.label :Email , class:'volun-lable'%><br />
+                <%= form.text_area :email, autofocus: true, autocomplete: "Email",class:"form-control" %>
+            </div>
+
+            <div class="form-group">
+              <%= form.label :Skill , class:'volun-lable'%><br />
+                <%= form.text_area :skill, autofocus: true, autocomplete: "Skill",class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.label :Location , class:'volun-lable'%><br />
+                <%= form.text_field :location, autofocus: true, autocomplete: "Location",class:"form-control" %>
+            </div>
+            <div class="form-group">
+              <%= form.label :Experienxe , class:'volun-lable'%><br />
+                <%= form.text_area :experienxe, autofocus: true, autocomplete: "Experienxe",class:"form-control" %>
+            </div>
+
+             <div>
+                <%= form.label :Photo %> <%= form.file_field :picture, accept:
+                'image/png,image/gif,image/jpeg,image/jpg' %>
+            </div>
+
+            <div>
+                <%= form.submit "Submit",class:'volunteer-create'%>
+            </div>
+
+        <% end %>
+
+      </div>
+    </div>    
+  </div>
+</div>
+
+
+
+
