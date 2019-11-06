@@ -53,6 +53,17 @@
 
 
 // vlounteer information page
+.volun-box{
+  padding: 30px;
+}
+
+.clear-padding{
+  padding:0;
+}
+.clear-row{
+  padding-left:0;
+  padding-right:0;
+}
 
 .section-volunteer{
   height: 1000px;
@@ -120,6 +131,9 @@
 }
 
 // index page
+.section-index{
+  height: 1300px;
+}
 
 .image-index{
   height: 300px;
@@ -129,7 +143,84 @@
 }
 
 .section-index .left-info{
+  padding-left:30px;
+  padding-right: 30px;
+  margin-top:60px;
+  padding-top:80px;
   background: rgb(255, 180, 34);
-  height: 300px;
+  height: 350px;
 }
+
+
+.section-index .left-info h2{
+
+  color:white;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.section-index .left-info h5{
+  color:white;
+  font-size: 15px;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+
+.donate-button{
+  margin-top:30px;
+  padding-top:6px;
+  display: inline-block;
+  height: 40px;
+  width: 180px;
+  border:1px solid white;
+  border-radius: 30px;
+  font-size: 16px;
+  color:white;
+  text-decoration: none;
+}
+
+.donate-button:hover{
+  color:rgb(255, 180, 34);
+  text-decoration: none;
+  background: white;
+  border-color:rgb(255, 180, 34);
+
+}
+
+
+.section-index .image-right{
+  margin-top:60px;
+  height: 350px;
+  background-image: url('image-right.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+
+
+// show information
+
+.section-show{
+  height: 1000px;
+}
+
+.section-show .container{
+  padding-top:100px;
+
+}
+
+.section-show .show-infor{
+  height: 200px;
+  padding-left:20px;
+  padding-right: 20px;
+  background: rgb(255, 180, 34);
+}
+
+
+.photo{
+  
+  height: 500px;
+}
+
 

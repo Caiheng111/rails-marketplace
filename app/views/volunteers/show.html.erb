@@ -2,12 +2,57 @@
 
 
 
-<h1><%= @volunteer.name %></h1>
-<p><%= @volunteer.description %></p>
-<h1><%= @volunteer.email %></h1>
-<h1><%= @volunteer.skill %></h1>
-<h1><%= @volunteer.location %></h1>
-<p><%= @volunteer.experience %></p>
-<%= image_tag @volunteer.picture, class:"photo" if @volunteer.picture.attached? %>
 
-<%= link_to 'Post a project now' %>
+<div class="section-show">
+
+    <div class="image-index">
+       
+    </div>
+
+    <div class="container">
+
+      <div class="volun-show">
+        <div class="row">
+
+          <div class="col-md-6  mx-auto ">
+                <div class="left-image">
+                    <%= image_tag @volunteer.picture, class:"photo" if @volunteer.picture.attached? %>
+                </div>
+            </div>
+
+            <div class="col-md-6  mx-auto">
+                <div class="vlounterr-infor">
+                  <h1><%= @volunteer.name %></h1>
+                  <p><%= @volunteer.description %></p>
+                </div>
+            </div> 
+        
+        </div>
+
+        <div class="row">
+          <div class="show-infor">
+            <div class="col-md-6  mx-auto ">
+                <div class="left-infor">
+                  <h1><%= @volunteer.email %></h1>
+                  <p><%= @volunteer.skill %></p>
+                </div>
+            </div>
+
+            <div class="col-md-6  mx-auto">
+                <div class="right-infor">
+                  <h1><%= @volunteer.location %></h1>
+                  <p><%= @volunteer.experience %></p>   
+                </div>
+            </div>   
+          </div>
+        
+        </div>
+          
+      </div>
+
+
+
+      
+
+    </div>
+</div>
