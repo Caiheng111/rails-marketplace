@@ -5,7 +5,6 @@
   <%= link_to 'Keep Donating', charities_listings_path, class: 'button is-warning' %>
 
 <hr />
-
   <%= render(@cart.line_items) %> <br>
 
   <%= button_to 'Empty Donation Listing', @cart, method: :delete, data: { confirm: "Are you sure? " }, class: "button is-danger" %>
@@ -16,5 +15,20 @@
       <span class="f5 has-text-grey">Total:</span> <%= number_to_currency(@cart.total_price) %>
     </h4>
 
-    <button><%= link_to 'go to pay' %></button>
+    <button data-stripe="payment"><%= link_to 'go to pay' %></button>
   </div>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script>
+      document
+        .querySelector("[data-stripe='payment']")
+        .addEventListener("click", () => {
+          const stripe = Stripe(
+            "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+          );
+
+          stripe.redirectToCheckout({
+            sessionId: "<%= @session_id %>"
+          });
+        });
+    </script>

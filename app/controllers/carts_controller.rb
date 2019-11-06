@@ -9,21 +9,28 @@ class CartsController < ApplicationController
 
  
   def show
+    @cart = Cart.find(params[:id])
+    session = Stripe::Checkout::Session.create(
+        payment_method_types: ['card'],
+        customer_email: current_user.email,
+        line_items: [{
+            name: "Your donations",
+            description: "description",
+            amount: @cart.total_price * 100,
+            currency: 'AUD',
+            quantity: 1,
+        }],
+        payment_intent_data: {
+            metadata: {
+                user_id: current_user.id,
+                cart_id: @cart.id
+            }
+        },
+        success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@cart.id}",
+        cancel_url: "#{root_url}listings"
+    )
 
-    # session = Stripe::Checkout::Session.create(
-    #   payment_method_types: ['card'],
-    #   customer_email: current_user.email,
-      
-    #   payment_intent_data: {
-    #       metadata: {
-    #           user_id: current_user.id,
-    #           charity_id: @charity.id
-    #       }
-    #   },
-    #   success_url: "#{root_url}payments/success?userId=#{current_user.id}&charityId=#{@charity.id}",
-    #   cancel_url: "#{root_url}listings"
-    # )
-    # @session_id = session.id
+    @session_id = session.id
   end
 
  
