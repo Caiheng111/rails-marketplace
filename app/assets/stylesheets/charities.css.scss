@@ -3,6 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+body, h2,h1,h3,h4{
+  margin:0;
+  padding:0;
+}
+
 
 
 // create charuty page
@@ -82,12 +87,6 @@
 
 
 
-
-
-
-
-
-
 // show page
 .picture{
   height: 300px;
@@ -104,3 +103,166 @@
 .infor{
   background: #f6f4ee;
 }
+
+
+
+
+// listings page
+
+.section-listings .image-charity{
+  height: 300px;
+  background-image: url('listing-charity-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;;
+}
+
+.section-listings .container{
+  margin-top:50px;
+}
+
+.search-bar{
+
+  margin-top:40px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-button{
+  display: block;
+  height: 200px;
+}
+
+.all-projects{
+  
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  color:black;
+}
+
+
+
+.all-projects:hover{
+  text-decoration: none;
+  color:black;
+}
+
+.dropdown-toggle{
+  margin-right:20px;
+  color:black;
+
+}
+
+.dropdown-toggle:hover{
+  color:black;
+
+}
+
+.section-listings .form-control{
+  width: 600px;
+  height: 40px;
+  outline:none;
+  border-color:rgb(255, 180, 34);
+  border-radius: 3px 0 0 3px!important;
+}
+
+.section-listings .search-btn{
+  
+  margin-right:30px;
+  width: 70px;
+  height: 40px;
+  outline:none;
+  border-color:rgb(255, 180, 34);
+  border-left:none;
+  border-radius: 0 3px 3px 0 !important;
+
+}
+
+.section-listings .listing-picture{
+  height: 228px;
+  width: 343px;
+}
+.section-listings .listing-row{
+  margin-bottom: 30px;
+}
+
+.all-projects .project-infor{
+  height: 300px;
+  padding:18px;
+  margin-left:10px;
+  width: 343px;
+  background: #f6f4ee;
+}
+
+.category{
+  font-size: 18px;
+  color:rgb(255, 180, 34);
+}
+
+.section-listings .title{
+  margin-bottom: 25px;
+  font-size: 20px;
+  color:black;
+  
+}
+
+.section-listings  .title:hover{
+  color:rgb(255, 180, 34);
+
+}
+
+.section-listings .content{
+  padding-left:10px;
+  padding-right: 10px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.section-listings .content p{
+  color: #353b48;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+.section-listings .progress{
+  border-radius: 2px;
+  height: 8px !important;
+
+}
+
+.section-listings .progress-bar{
+  height: 8px !important;
+}
+
+ .title-top{
+  height: 100px;
+}
+
+.top-summary{
+  height: 100px;
+}
+
+.raised-number{
+  color:rgb(255, 180, 34);
+}
+
+.pagination{
+  border-radius: none;
+  border-color:rgb(255, 180, 34);
+}
+
+.pagination a{
+  color:black !important;
+  background: transparent  !important;
+
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+
+
+
+

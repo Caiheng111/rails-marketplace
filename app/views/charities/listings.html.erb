@@ -1,88 +1,148 @@
-<h1>Projects listings</h1>
-
-<ul class="nav nav-pills">
-  <li>
-    <%= form_tag charities_listings_path, :method=>'get' do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "search" %>
-    <% end %>
-  </li>
-  <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      COUNTRY <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><%= link_to 'India', charities_listings_path(location:"India") %></li>
-      <li><%= link_to 'Kenya', charities_listings_path(location:"Kenya") %></li>
-      <li><%= link_to 'Nepal', charities_listings_path(location:"Nepal") %></li>
-      <li><%= link_to 'Mexico', charities_listings_path(location:"Mexico") %></li>
-     
-    </ul>
-  </li>
-  <li role="presentation" class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-      THEME <span class="caret"></span>
-    </a>
-    <ul class="dropdown-menu">
-      <li><%= link_to 'Women and Girls', charities_listings_path(category: Category.find(1)) %></li>
-      <li><%= link_to 'Education', charities_listings_path(category: Category.find(2)) %></li>
-      <li><%= link_to 'Health', charities_listings_path(category: Category.find(3)) %></li>
-      <li><%= link_to 'Environment', charities_listings_path(category: Category.find(4)) %></li>
-      <li><%= link_to 'Hunger', charities_listings_path(category: Category.find(6)) %></li>
-      <li><%= link_to 'Economic Development', charities_listings_path(category: Category.find(5)) %></li>
-    </ul>
-  </li>
-
-  <li><%= link_to 'All Projects', charities_listings_path %></li>
 
 
-</ul>
-  <section>
-		<div class="container">
-     <div class="row">
-      <% if @charities !=nil %>
-        <% @charities.each do |charity| %>
-            <div class="col-md-4  mx-auto">
-              <% charity.pictures.each do |picture| %>
-                  <%= image_tag picture, class:"index-picture" %>
-                  <% break %>
-              <% end %>
-              <div clas="infor">
+<div class="section-listings">
 
-                <h3><%= link_to charity.title, charity_path(charity) %></h3>
-                <h3><%= charity.category.title %></h3>
-                <p><%= charity.summary.truncate(200) %></p>
+    <div class="image-charity">
 
-                <div class="progress">
-                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%=((charity.current_raised).to_f/(charity.raised_goal).to_f) *100.0%>%;">
-                
-                  </div>
-                </div>
-                <h3>Current Raised: $<%= charity.current_raised %></h3>
-                <h3>Raise Goal: $<%= charity.raised_goal %></h3>
-                <h2> Donate $<%= charity.donate_basic %> Now</h2>
-              
-                <% if user_signed_in? && current_user.admin? %>
-                  <button><%= link_to 'Delete', charity_path(charity), method: :delete %></button>
-                  <button><%= link_to 'Edit', edit_charity_path(charity) %></button>
-            
-                <% end %>
-              </div>    
-            </div> 
-          <%end%>
-          <div>
-            <%= will_paginate %>
-          </div>
-        
-      <% else %>
-        <div>
-          <h1>4004</h1>
-          <h1>Page you are looking is not found</h1>
-        </div>
-      <% end %>
-		</div>
     
-	</section>
+    </div>
+
+    <div class="container">
+      <h2>All Projects</h2>
+
+      <div class="search-bar">
+        <ul class="nav nav-pills">
+            <li>
+              <div class="row">
+                <%= form_tag charities_listings_path, :method => 'get', class: 'input-group'  do %>
+                  <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for...' %>
+                  <span class="input-group-btn">
+                    <%= submit_tag "Search", class: "search-btn" %>
+                  </span>
+                <% end %>
+              </div>
+            </li>
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                COUNTRY <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'India', charities_listings_path(location:"India") %></li>
+                <li><%= link_to 'Kenya', charities_listings_path(location:"Kenya") %></li>
+                <li><%= link_to 'Nepal', charities_listings_path(location:"Nepal") %></li>
+                <li><%= link_to 'Mexico', charities_listings_path(location:"Mexico") %></li>
+              
+              </ul>
+            </li>
+            <li role="presentation" class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                THEME <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Women and Girls', charities_listings_path(category: Category.find(1)) %></li>
+                <li><%= link_to 'Education', charities_listings_path(category: Category.find(2)) %></li>
+                <li><%= link_to 'Health', charities_listings_path(category: Category.find(3)) %></li>
+                <li><%= link_to 'Environment', charities_listings_path(category: Category.find(4)) %></li>
+                <li><%= link_to 'Hunger', charities_listings_path(category: Category.find(6)) %></li>
+                <li><%= link_to 'Economic Development', charities_listings_path(category: Category.find(5)) %></li>
+              </ul>
+            </li>
+
+            <li><%= link_to 'Clear All Filters', charities_listings_path,class:"all-projects" %></li>
+          </ul>
+      
+      </div>
+
+      <div class="all-projects">
+      
+        <section>
+          <div class="container">
+          <div class="row">
+            <% if @charities !=nil %>
+              <% @charities.each do |charity| %>
+                  <div class="col-md-4  col-sm-auto listing-row">
+                    <% charity.pictures.each do |picture| %>
+                        <%= image_tag picture, class:"listing-picture" %>
+                        <% break %>
+                    <% end %>
+                    <div class="project-infor">
+                      <div class="title-top">
+                        <h3 class="category"><%= charity.category.title %></h3>
+                        <%= link_to charity.title , charity_path(charity), class:"title" %>
+                      </div>
+                      
+                      <div class="content">
+
+                        <div class="top-summary">
+                          <p><%= charity.summary.truncate(150) %></p>
+                        </div>
+                       
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: <%=((charity.current_raised).to_f/(charity.raised_goal).to_f) *100.0%>%;">
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="raised">
+                        <span>Raised: $ <span class="raised-number"><%= charity.current_raised %></span></span>
+                        <span>Goal: $ <span class="raised-number"> <%= charity.raised_goal %></span></span>
+                      </div>
+
+                      <% if user_signed_in? && current_user.admin? %>
+                        <button><%= link_to 'Delete', charity_path(charity), method: :delete %></button>
+                        <button><%= link_to 'Edit', edit_charity_path(charity) %></button>
+                  
+                      <% end %>
+                    </div>    
+                  </div> 
+                <%end%>
+
+ 
+            <% else %>
+              <div>
+                <h1>4004</h1>
+                <h1>Page you are looking is not found</h1>
+              </div>
+            <% end %>
+          </div>
+
+          <div class="row">
+            <div>
+              <%= will_paginate %>
+            </div>
+          </div>
+
+      
+        </section>
+      </div>
+
+     
+    
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
  
 
 

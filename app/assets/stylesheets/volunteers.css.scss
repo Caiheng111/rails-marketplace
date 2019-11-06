@@ -196,6 +196,7 @@
 }
 
 
+
 // show information
 
 .section-show{
@@ -207,16 +208,16 @@
 
 }
 
+.section-show .vlounter-infor{
+  height: 300px;
+  background: rgb(255, 180, 34);
+}
+
 .section-show .show-infor{
   height: 200px;
   padding-left:20px;
   padding-right: 20px;
-  background: rgb(255, 180, 34);
-}
-
-
-.photo{
-  height: 500px;
+  
 }
 
 .right-infor h1{

@@ -25,16 +25,20 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
-        <% if total_cart_items %>
-          <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
-          <span class="icon is-small">
-            <i class="fa fa-shopping-cart"></i>
-          </span>
-          <span>Cart
-            <%= cart_count_over_one %>
+
+        <li>
+          <% if total_cart_items %>
+            <%= link_to cart_path(@cart), class:"navbar-item button is-warning" do %>
+            <span class="icon is-small">
+              <i class="fa fa-shopping-cart"></i>
             </span>
+            <span>Cart
+              <%= cart_count_over_one %>
+            </span>
+            <% end %>
           <% end %>
-        <% end %>
+        </li>
+        
     
       <% if user_signed_in? && current_user.user_type=="organization" %>
        
