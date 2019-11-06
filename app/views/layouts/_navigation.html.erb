@@ -54,9 +54,25 @@
         
 
       <% elsif user_signed_in? && current_user.user_type=="volunteer"  %>
-   
-        <li><%= link_to "profile", volunteers_path %> </li>
-        <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
+          <% if  current_user.volunteer !=nil && current_user.volunteer.name !=nil %>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Your Profile<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Show your Profile", volunteer_path(current_user.volunteer)%> </li> 
+                <li role="separator" class="divider"></li>
+                <li><%= link_to "Edit your Profile", edit_volunteer_path(current_user.volunteer)%> </li>
+                
+              </ul>
+            </li>
+            <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
+
+            <% else %>
+            <li><%= link_to "profile", volunteers_path %> </li>
+            <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
+
+            
+
+            <% end %>
       <% elsif user_signed_in? && current_user.user_type=="donor" ||user_signed_in? && current_user.admin?  %>
         
         <li> <%= link_to "Messages", conversations_path %></li>

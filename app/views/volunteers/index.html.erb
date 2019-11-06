@@ -1,13 +1,34 @@
 
 
+<div class="section-index">
 
-<h1>Welcome to be a volunteer</h1>
+    <div class="image-index">
+        
+    </div>
+
+    <div class="container">
+
+        <h1>Welcome to be a volunteer</h1>
+        <h4>The volunteers help nonprofits from Afghanistan to Zimbabwe (and hundreds of places in between) access the tools, training, and support they need to be more effective and make our world a better place.</h4>
+
+        <div class="volun-box">
+            <div class="col-md-6  mx-auto clear-padding-col clear-padding-row">
+                <div class="left-info">
+
+                    <h2>Become a </h2>
+                
+                </div>
+            </div>
+        
+        
+        </div>
+    
+    
+    </div>
 
 
-<% if  current_user.volunteer !=nil && current_user.volunteer.name !=nil %>
-    <%= link_to "show your infor", volunteer_path(current_user.volunteer) %>  <br>
-    <%= link_to "edit your infor", edit_volunteer_path(current_user.volunteer) %> 
+</div>
 
-<% else%>
-    <%= link_to 'add your information', new_volunteer_path(current_user.volunteer)%>
-<% end %>
+
+
+
