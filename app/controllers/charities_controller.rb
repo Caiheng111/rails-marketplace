@@ -58,7 +58,7 @@ class CharitiesController < ApplicationController
 
   def show
 
-    
+    @charities = Charity.order("created_at DESC").limit(2)
     
   end
 

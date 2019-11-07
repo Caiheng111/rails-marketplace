@@ -2,15 +2,83 @@
 
 
 
-<h1>Welcome to be a origization</h1>
 
-<h1>have not add your profile, add it here</h1>
+<div class="organization-index">
 
-<% if  current_user.organization !=nil && current_user.organization.title !=nil %>
-    <%= link_to "show your infor", organization_path(current_user.organization) %> 
-    <%= link_to "Edit your infor", edit_organization_path(current_user.organization) %> 
+    <div class="org-index">
+        
+    </div>
 
-<% else%>
-    <%= link_to 'add your information', new_organization_path(current_user.organization)%>
-<% end %>
+    <div class="container">
+
+        <h1>Welcome to be a part of GoodGiving</h1>
+        <h4>GlobalGiving is the largest global crowdfunding community connecting nonprofits, donors, and companies in nearly every country. We help nonprofits from Afghanistan to Zimbabwe (and hundreds of places in between) access the tools, training, and support they need to be more effective and make our world a better place.</h4>
+
+        <div class="volun-box">
+            <div class="col-md-6  mx-auto clear-padding clear-row">
+                <div class="left-info">
+
+                    <h2>Become a Organization</h2>
+                    <h5>(some introduction)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit hendrerit faucibus. Suspendisse hendrerit turpis dui, eget ultricies erat consequat ut. Sed ac velit iaculis, condimentum.</h5>
+
+                    <%= link_to 'Add Your Profile', new_organization_path , class:"profile-button"%>
+                
+                </div>
+            </div>
+
+            <div class="col-md-6  mx-auto clear-padding clear-row">
+               <div class="image-right">
+               </div>
+            </div>
+        
+        
+        </div>
+    
+    
+    </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

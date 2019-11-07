@@ -1,1 +1,71 @@
 
+
+
+
+// regination information
+.section-regination{
+  height: 800px;
+}
+
+.section-regination .image-regination{
+  height: 800px;
+  background-image: url('organization-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;;
+
+}
+
+.section-regination .vlounteer-regi{
+  padding-top:120px;
+}
+
+.vlounteer-regi{
+  padding-left:70px;
+  width: 500px;
+}
+
+.vlounteer-regi h2{
+  font-size: 30px;
+  font-family: 'Merriweather', serif;
+
+}
+
+.vlounteer-regi h3{
+  font-size: 15px;
+  font-family: 'Merriweather', serif;
+  color:rgb(255, 180, 34);
+  line-height: 23px;
+
+}
+  
+
+.vlounteer-regi .volun-lable{
+  margin-top:14px;
+  margin-bottom: 12px;
+  font-size: 16px;
+
+
+ 
+}
+
+.vlounteer-regi .form-control{
+  height: 40px;
+  border-radius:0;
+  font-size: 15px;
+}
+
+
+.vlounteer-regi .form-control:focus{
+    border-color:rgb(255, 180, 34);
+    box-shadow:none;
+ 
+}
+
+.reganization-submit{
+  margin-top:20px;
+  width: 430px;
+  height: 30px;
+  background: rgb(255, 180, 34);
+  border:none;
+  font-size:18px;
+}

@@ -49,14 +49,14 @@
                 <li role="separator" class="divider"></li>
               <li><%= link_to "All Projects", charities_path%> </li>
                 <li role="separator" class="divider"></li> 
-              <li><%= link_to "Profile", organizations_path %> </li> 
+              <li><%= link_to "Edit Your Profile", edit_organization_path(current_user.organization) %> </li> 
                 <li role="separator" class="divider"></li> 
               <li> <%= link_to "Messages", conversations_path %></li>
             </ul>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li> 
         </li>
         <% else %>
-          <li> <%= link_to "Profile", new_organization_path %></li>
+          <li> <%= link_to "Profile", organizations_path %></li>
           <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li> 
         <% end %>
         
@@ -72,20 +72,20 @@
                 <li> <%= link_to "Messages", conversations_path %></li>
               </ul>
             </li>
-            <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li> 
 
             <% else %>
-              <li><%= link_to "profile", volunteers_path %> </li>
-              <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
+              <li><%= link_to "Profile", volunteers_path %> </li>
+              <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li> 
 
             <% end %>
       <% elsif user_signed_in? && current_user.user_type=="donor" ||user_signed_in? && current_user.admin?  %>
         
         <li> <%= link_to "Messages", conversations_path %></li>
-        <li><%= link_to "Sign_out", destroy_user_session_path, method: :delete %> </li> 
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %> </li> 
       <% else%>
-        <li><%= link_to 'Sign_in', user_session_path %></li>
-        <li><%= link_to "Sign_up", new_user_registration_path %> </li> 
+        <li><%= link_to 'Sign In', user_session_path %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %> </li> 
        
       <% end %>
     

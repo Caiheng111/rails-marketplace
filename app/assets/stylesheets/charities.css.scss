@@ -8,6 +8,13 @@ body, h2,h1,h3,h4{
   padding:0;
 }
 
+.clear-col{
+  margin:0;
+  padding:0;
+}
+
+
+
 
 
 
@@ -298,8 +305,143 @@ body, h2,h1,h3,h4{
 
 
 
+// show page
+
+.charity-show .show-image{
+  height: 300px;
+  background-image:url('charity-show.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.charity-show .listing-picture{
+  margin-bottom: 60px;
+  width: 780px;
+}
+
+.charity-show .container{
+  padding-top:100px;
+}
+
+.charity-show .chairty-title{
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+}
+
+.charity-show .leader{
+  margin-top:10px;
+  font-size: 18px;
+  margin-bottom:10px;
+  
+}
+
+.charity-show .information-charity{
+  padding:50px;
+  text-align: justify;
+  height: 880px;
+  background: #f6f4ee;
+
+}
+
+.information-charity{
+  padding-top:80px;
+}
+
+.information-charity h2{
+  margin-bottom:20px;
+}
+
+.information-charity h4{
+  line-height: 25px;
+  margin-bottom:20px;
+}
+
+.listing-picture2{
+  width: 300px;
+  height: 200px;
+}
+.lasted-projects{
+  margin-bottom: 60px;
+  height: 800px;
+ 
+}
 
 
 
+.lasted-projects h2{
+  margin-bottom: 30px;
 
+}
+
+.title-top2{
+  margin-bottom: 20px;
+}
+
+
+
+.lasted-projects .top-summary{
+  height: 80px;
+}
+
+.lasted-projects .project-infor{
+  margin-left:30px;
+  width: 300px;
+  height: 200px;
+  background: #f6f4ee;
+  margin-bottom:20px;
+  padding-top:20px;
+  padding-left:20px;
+}
+
+
+.lasted-projects  .progress{
+  border-radius: 2px;
+  height: 8px !important;
+
+}
+
+.lasted-projects  .progress-bar{
+  height: 8px !important;
+}
+
+.add-cart{
+  letter-spacing: 2px;
+  width: 300px;
+  height: 40px;
+  background: rgb(255, 180, 34);
+  outline:0;
+  border:none;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.add-cart:hover{
+  color:white;
+
+}
+
+.information-charity .organization{
+  height: 400px;
+  padding-left:30px;
+  padding-right: 30px;
+}
+
+.message-button{
+  color:black;
+  text-decoration: none;
+  width: 300px;
+  height: 40px;
+  background: rgb(255, 180, 34);
+  outline:0;
+  border:none;
+  font-size: 18px;
+  margin-bottom: 20px;
+
+}
+
+
+.information-charity .donate{
+  height: 200px;
+  margin-bottom: 200px;
+}
 
