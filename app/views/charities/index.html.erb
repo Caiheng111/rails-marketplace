@@ -1,42 +1,107 @@
 
 
+<div class="section-listings">
 
+    <div class="image-charity">
 
-<h1>Projects listings</h1>
-  <section>
-		<div class="container">
-     <div class="row">
-        <% @charities.each do |charity| %>
-              <div class="col-md-4  mx-auto">
-              
-                <% charity.pictures.each do |picture| %>
-                    <%= image_tag picture, class:"show-image", class:"index-picture" %>
-                    <% break %>
-                <% end %>
-           
-                <div clas="infor">
+    
+    </div>
 
-                  <h1><%= charity.category.title%></h1>
-                  <h3><%= charity.title %></h3>
-                  <p><%= charity.summary.truncate(200) %></p>
+    <div class="container">
+      <h2>All Projects</h2>
 
-                  <div class="progress">
-                  <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: <%=((charity.current_raised).to_f/(charity.raised_goal).to_f) *100.0%>%;">
-                
-                  </div>
-                </div>
-                  <h3>Raised: $<%= charity.current_raised %></h3>
-                  <h3>Raised: $<%= charity.raised_goal %></h3>
-                  <%= link_to 'Edit', edit_charity_path(charity) %>
-                  <%= link_to 'Show', charity_path(charity) %>
-                 
-                </div>    
+      <div class="all-projects">
+      
+        <section>
+          <div class="container">
+          <div class="row">
+            <% if @charities !=nil %>
+              <% @charities.each do |charity| %>
+                  <div class="col-md-4  col-sm-auto listing-row">
+                    <% charity.pictures.each do |picture| %>
+                        <%= image_tag picture, class:"listing-picture" %>
+                        <% break %>
+                    <% end %>
+                    <div class="project-infor">
+                      <div class="title-top">
+                        <h3 class="category"><%= charity.category.title %></h3>
+                        <%= link_to charity.title , charity_path(charity), class:"title" %>
+                      </div>
+                      
+                      <div class="content">
+
+                        <div class="top-summary">
+                          <p><%= charity.summary.truncate(150) %></p>
+                        </div>
+                       
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="min-width: 1em; width: <%=((charity.current_raised).to_f/(charity.raised_goal).to_f) *100.0%>%;">
+                            
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="raised">
+                        <span>Raised: $ <span class="raised-number"><%= charity.current_raised %></span></span>
+                        <span>Goal: $ <span class="raised-number"> <%= charity.raised_goal %></span></span>
+                      </div>
+                    </div>  
+
+                    <% if user_signed_in? && current_user.admin? || current_user.organization != nil %>
+                      <div class="button">
+                        <button class="edit-button"><%= link_to 'Edit', edit_charity_path(charity),class:"edit" %></button>
+                        <button class="delete-button"><%= link_to 'Delete', charity_path(charity), method: :delete, class:"delete"%></button>
+                      
+                      </div>
+                    <% end %>  
+                  </div> 
+                <%end%>
+
+ 
+            <% else %>
+              <div>
+                <h1>4004</h1>
+                <h1>Page you are looking is not found</h1>
               </div>
-          
-          <%end%>
-       </div>
-		</div>
-	</section>
+            <% end %>
+          </div>
+
+          <div class="row">
+            <div>
+              <%= will_paginate %>
+            </div>
+          </div>
+
+      
+        </section>
+      </div>
+
+     
+    
+    </div>
+
+
+
+</div>
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
  
 
 

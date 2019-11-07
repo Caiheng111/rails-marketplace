@@ -10,6 +10,9 @@ body, h2,h1,h3,h4{
 
 
 
+
+
+
 // create charuty page
 
 .section-charity{
@@ -83,6 +86,10 @@ body, h2,h1,h3,h4{
   width: 100px;
   background:transparent;
 
+}
+
+.charity-infor .edit{
+  margin-bottom: 20px;
 }
 
 
@@ -261,6 +268,36 @@ body, h2,h1,h3,h4{
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
 }
+
+// index page
+
+.section-listings .button{
+  margin-top:20px;
+}
+
+
+.edit-button,.delete-button{
+  margin-right: 10px;
+  height: 30px;
+  width: 100px;
+  border:none; 
+  outline: none;
+  border-radius: 5px;
+  color:rgb(255, 180, 34);
+  background: rgb(255, 180, 34);
+}
+
+
+.edit,.delete{
+  color:white;
+}
+.edit:hover,.delete:hover{
+  text-decoration: none;
+  color:black;
+}
+
+
+
 
 
 

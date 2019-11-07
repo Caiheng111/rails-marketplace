@@ -24,7 +24,7 @@ class CharitiesController < ApplicationController
 
 
   def index
-    @charities=current_user.organization.charities
+    @charities=current_user.organization.charities.paginate(page: params[:page],per_page:6)
   end
 
    

@@ -12,17 +12,17 @@
     <div class="container">
 
       <div class="volun-show">
-        <div class="row">
+        <div class="row clear-row">
 
-          <div class="col-md-6  mx-auto ">
+          <div class="col-md-6  mx-auto clear-padding clear-row ">
                 <div class="left-image">
-                    <%= image_tag @volunteer.picture, class:"photo" if @volunteer.picture.attached? %>
+                    <%= image_tag @volunteer.picture, class:"photo-volunteer" if @volunteer.picture.attached? %>
                 </div>
             </div>
 
-            <div class="col-md-6  mx-auto">
-                <div class="vlounter-infor">
-                  <h1><%= @volunteer.name %></h1>
+            <div class="col-md-6  mx-auto clear-padding clear-row">
+                <div class="infor-top">
+                  <h1 class="volun-name"><%= @volunteer.name %></h1>
                   <p><%= @volunteer.description %></p>
                 </div>
             </div> 
@@ -31,11 +31,24 @@
 
         <div class="row">
           <div class="show-infor">
-            <div class="col-md-6  mx-auto ">
+            <div class="col-md-6  mx-auto clear-padding clear-row ">
                 <div class="left-infor">
-                  <h2>Skill</h2>
+                  <h3> My Skill</h3>
                   <p><%= @volunteer.skill %></p>
-                  <h2>Leardship</h2>
+                  <h5>Leardship</h5>
+
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
+                  <h5>Volunteering</h5>
+
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 30%">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
                   
                   
                 </div>
@@ -43,9 +56,10 @@
 
             <div class="col-md-6  mx-auto">
                 <div class="right-infor">
-                  <h1>Email</h1>
-                  <h1><%= @volunteer.email %></h1>
-                  <h1><%= @volunteer.location %></h1>
+                  <h3>Email</h3>
+                  <p><%= @volunteer.email %></p>
+              
+                  <h3>Experience</h3>
                   <p><%= @volunteer.experience %></p>   
                 </div>
             </div>   
