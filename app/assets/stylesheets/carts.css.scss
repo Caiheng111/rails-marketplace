@@ -1,0 +1,149 @@
+// Place all the styles related to the Carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.cart-image{
+
+  height: 300px;
+  background-image: url('donating.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 80px;
+}
+
+
+.keep-donate{
+  position: relative;
+  margin-bottom: 80px;
+  
+}
+
+.keep-button{
+  text-align: center;
+  position: absolute;
+  right:0px;
+  display: block;
+  height: 30px;
+  width: 150px;
+  background: rgb(255, 180, 34);
+  color:black;
+  padding-top:5px;
+  border-radius: 5px;
+}
+
+
+.keep-button:hover{
+  text-decoration: none;
+  color:white;
+}
+
+.donate-picture{
+  height: 100px;
+  width: 130px;
+}
+
+.cart-show .container{
+  height: auto;
+  text-align: left;
+}
+
+.cart-show   .items{
+  background: #f6f4ee;
+  margin-bottom: 40px;
+}
+
+.cart-show .charity-title{
+  font-size: 20px;
+}
+
+.donate-lineItem{
+  position: relative;
+  padding:20px;
+}
+
+.quantity{
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.cart-show .charity-title{
+  margin-left: 40px;
+}
+
+.cart-show .price{
+  font-size: 20px;
+  margin-left: 40px;
+}
+
+.remove-button{
+  text-align: center;
+  display: block;
+  position: absolute;
+  right:20px;
+  bottom:15px;
+  height: 30px;
+  line-height: 30px;
+  width: 80px;
+  background: rgb(255, 180, 34);
+  color:black;
+  border-radius: 5px;
+
+}
+
+.remove-button:hover{
+  text-decoration: none;
+  color:white;
+}
+
+.empty-button{
+  text-align: center;
+ outline: 0;
+  display: block;
+  height: 30px;
+  width: 200px;
+  background: rgb(255, 180, 34);
+  color:black;
+  padding-top:5px;
+  border:none;
+  border-radius: 5px;
+
+}
+.pay{
+
+  position: relative;
+  text-align: right;
+}
+
+.total-price{
+
+  font-size: 18px;
+
+}
+
+.payment-button{
+  position: absolute;
+  right:0;
+  bottom: -50px;
+  text-align: center;
+  outline: 0;
+   display: block;
+   height: 30px;
+   width: 100px;
+   background: rgb(255, 180, 34);
+   color:black;
+   padding-top:5px;
+   border:none;
+   border-radius: 5px;
+}
+
+.payment-button:hover{
+  text-decoration: none;
+  color:white;
+}
+
+.payment{
+  height: 150px;
+}

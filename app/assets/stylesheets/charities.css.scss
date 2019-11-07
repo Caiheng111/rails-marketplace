@@ -331,7 +331,7 @@ body, h2,h1,h3,h4{
 .charity-show .leader{
   margin-top:10px;
   font-size: 18px;
-  margin-bottom:10px;
+  margin-bottom:30px;
   
 }
 
@@ -391,6 +391,7 @@ body, h2,h1,h3,h4{
   margin-bottom:20px;
   padding-top:20px;
   padding-left:20px;
+  padding-right: 20px;
 }
 
 
@@ -412,7 +413,7 @@ body, h2,h1,h3,h4{
   outline:0;
   border:none;
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .add-cart:hover{
@@ -427,10 +428,12 @@ body, h2,h1,h3,h4{
 }
 
 .message-button{
+  display: inline-block;
   color:black;
   text-decoration: none;
-  width: 300px;
+  width: 200px;
   height: 40px;
+  line-height: 40px;
   background: rgb(255, 180, 34);
   outline:0;
   border:none;
@@ -439,9 +442,63 @@ body, h2,h1,h3,h4{
 
 }
 
+.message-button:hover{
+  color:white;
+  text-decoration: none;
+  
 
-.information-charity .donate{
-  height: 200px;
-  margin-bottom: 200px;
 }
+
+
+.charity-show .donate-box{
+  height: 200px;
+  margin-bottom: 20px;
+}
+
+.charity-show .organization{
+  height: 300px;
+  width: 300px;
+  background: #f6f4ee;
+  padding:30px;
+  margin-left:50px;
+  padding-bottom: 0 !important;
+  padding-top:20px;
+}
+
+.charity-show  h4{
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.org-title{
+  margin-bottom: 20px;
+  font-size: 18px;
+  color:rgb(255, 180, 34);
+}
+
+.charity-show p{
+  font-size: 14px;
+}
+
+.charity-show .location, {
+  font-size: 18px;
+}
+
+.charity-show  .progress{
+  margin-bottom: 20px;
+
+}
+
+.charity-show .raised-top{
+  margin-bottom: 40px;
+  font-size: 20px;
+}
+
+.charity-show .raised-top span{
+  margin-right: 20px;
+}
+.charity-show .progress{
+  background: white;
+}
+
 
