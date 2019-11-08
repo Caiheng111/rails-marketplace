@@ -89,14 +89,15 @@
                         <span>Goal: $ <span class="raised-number"> <%= charity.raised_goal %></span></span>
                       </div>
 
-                      <% if user_signed_in? && current_user.admin? %>
+                      
+                    </div> 
+                    <% if user_signed_in? && current_user.admin? %>
                         <div class="button-listings">
                           <button class="edit-button"><%= link_to 'Edit', edit_charity_path(charity),class:"edit" %></button>
                           <button class="delete-button"><%= link_to 'Delete', charity_path(charity), method: :delete, class:"delete"%></button>
                         
                         </div>
-                    <% end %>
-                    </div>    
+                    <% end %>   
                   </div> 
                 <%end%>
 
