@@ -24,6 +24,12 @@ class OrganizationsController < ApplicationController
   end
 
   def edit
+     # only allows user to access the edit page of his own profile
+     if current_user.id == Organization.find(params[:id]).user.id
+      @organization = Organization.find(params[:id])
+    else
+      redirect_to root_path
+    end
  
   end
 

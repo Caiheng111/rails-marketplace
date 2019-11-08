@@ -43,8 +43,15 @@ class CharitiesController < ApplicationController
     end 
   end
 
+  
+
   def edit
- 
+    # only allows user to access the edit page of his own listings
+    if current_user.id == Charity.find(params[:id]).user.id
+      @charity = Charity.find(params[:id])
+    else
+      redirect_to root_path
+    end
   end
 
   def update
