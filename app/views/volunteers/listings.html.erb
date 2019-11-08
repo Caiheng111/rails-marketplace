@@ -23,7 +23,7 @@
                   <%= image_tag volunteer.picture , class:"volunteer-picture"%>
                 </div>
                 <div class="volun-info">
-                  <%= volunteer.name %>
+                  <%= link_to volunteer.name , volunteer_path(volunteer),class:'volunteer-name' %>
                 </div>
             </div>
         <%end%>

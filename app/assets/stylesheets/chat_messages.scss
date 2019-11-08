@@ -5,33 +5,37 @@
 
 
 .image-message{
-  height: 330px;
+height: 300px;
   background-image: url('message-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
 
-.messages-section .contanier{
+.messages-section .container{
   padding-left:50px;
   padding-right: 50px;
   text-align: left !important;
-  height: 800px;
+  margin-bottom: 30px;
+
 }
+
 
 .message-box{
 
-  padding-top:100px;
-  text-align: left;
+  padding-top:80px;
+
+  margin-bottom: 10px;
 }
 
 .message-box .name{
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .message-body{
   border-bottom:5px solid white;
   height: 60px;
   background: #f6f4ee;
+  
 }
 
 .message-button{
@@ -43,8 +47,15 @@
 .textarea-message{
   border:1px solid rgb(255, 180, 34);
   display: black;
-  width: 79vw;
+  width: 74vw;
+  margin-bottom: 20px;
 
+}
+
+.conversation{
+  font-size: 30px;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 20px;
 }
 
 

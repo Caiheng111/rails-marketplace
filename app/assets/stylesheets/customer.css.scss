@@ -51,6 +51,7 @@ body, h2,h1,h3,h4{
   font-family: 'Merriweather', serif;
   color:rgb(255, 180, 34) !important;
   font-size: 22px;
+  height: 50px;
 
 
 }
@@ -250,6 +251,39 @@ body, h2,h1,h3,h4{
 }
 
 
+
+
+
+// footer section
+
+
+footer .section{
+  background: rgb(255, 180, 34);
+  height: 100px;
+}
+
+footer .section .box{
+  padding-left: 40px;
+  padding-right:40px;
+  padding-top:30px;
+  color:black;
+}
+
+footer .section .box h4{
+  margin-bottom: 20px;
+}
+
+footer .section .icon{
+
+  margin-right: 60px;
+  font-size: 30px;
+}
+
+.icons{
+  padding-left:40px;
+  padding-top:10px;
+  text-align: center;
+}
 
 
 

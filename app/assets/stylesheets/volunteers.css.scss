@@ -28,11 +28,12 @@ body, h1{
   background: none;
   text-align: center;
   font-family: 'Merriweather', serif;
+  margin-bottom: 60px;
 }
 
 .section-volun .container h1{
-  margin-top:100px;
-  margin-bottom: 80px;
+  margin-top:80px;
+  margin-bottom: 60px;
 }
 
 .section-volun .container h4{
@@ -211,6 +212,15 @@ body, h1{
 
 // show information
 
+.volunteer-name{
+  color:black;
+}
+
+.vlounteer-name:hover{
+  color:rgb(255, 180, 34) ;
+  text-decoration: none;
+}
+
 .section-show{
   height: 1400px;
 }
@@ -221,13 +231,19 @@ body, h1{
 }
 
 .section-show .infor-top{
+
+  text-align: center;
   margin-top:80px;
   box-sizing: border-box;
-  padding-top:10px;
+  padding-top:80px;
   padding-left: 30px;
   padding-right: 30px;
   height: 400px;
   background: rgb(255, 180, 34);
+}
+
+.infor-top .volun-name{
+  margin-bottom: 30px;
 }
 
 
