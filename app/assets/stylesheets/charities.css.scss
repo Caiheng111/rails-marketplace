@@ -327,12 +327,13 @@ body, h2,h1,h3,h4{
   margin-bottom: 50px;
 }
 
-.charity-show .chairty-title{
+.charity-show .charity-title{
   font-size: 20px;
   font-family: 'Merriweather', serif;
 }
 
 .charity-show .leader{
+  font-family: 'Open Sans', sans-serif;
   margin-top:10px;
   font-size: 18px;
   margin-bottom:30px;
@@ -352,10 +353,14 @@ body, h2,h1,h3,h4{
 }
 
 .information-charity h2{
+  font-size: 24px;
+  font-family: 'Merriweather', serif;
   margin-bottom:20px;
 }
 
 .information-charity h4{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
   line-height: 25px;
   margin-bottom:20px;
 }
@@ -410,6 +415,7 @@ body, h2,h1,h3,h4{
 }
 
 .add-cart{
+  font-family: 'Open Sans', sans-serif;
   letter-spacing: 2px;
   width: 300px;
   height: 40px;
@@ -433,6 +439,7 @@ body, h2,h1,h3,h4{
 }
 
 .message-button{
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
   color:black;
   text-decoration: none;
@@ -449,10 +456,11 @@ body, h2,h1,h3,h4{
 }
 
 .message-button2{
+  font-family: 'Open Sans', sans-serif;
   display: inline-block;
   color:black;
   text-decoration: none;
-  width: 120px;
+  width: 100px;
   height: 40px;
   line-height: 40px;
   background: rgb(255, 180, 34);
