@@ -28,10 +28,9 @@ class VolunteersController < ApplicationController
   end
 
   def edit
-     # only allows user to access the edit page of his own profile
-     if current_user.id == Volunteer.find(params[:id]).user.id
-      @volunteer = Volunteer.find(params[:id])
-    else
+     # only allows user to access the edit page of his own listings
+     @volunteer = Volunteer.find(params[:id])
+    if current_user.id != @volunteer.user_id
       redirect_to root_path
     end
  

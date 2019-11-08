@@ -21,9 +21,7 @@ height: 300px;
 
 
 .message-box{
-
   padding-top:80px;
-
   margin-bottom: 10px;
 }
 
@@ -59,5 +57,72 @@ height: 300px;
 }
 
 
+// conversation page
+
+.conversation-image{
+  height: 300px;
+    background-image: url('conversation-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.conversation-section .container{
+  min-height: 400px;
+  padding-top:80px;
+}
+
+.conversation-section .content{
+  margin-bottom: 30px;
+  background: #f6f4ee;
+}
+
+.conversation-title{
+  font-family: 'Merriweather', serif;  
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.user-information{
+  position: relative;
+  padding:30px;
+  border-bottom:3px solid white;
+}
+
+.user-information h4{
+  margin-bottom:10px;
+
+}
+.conver-link, .conver-link2{
+  
+  display: inline-block;
+  height: 30px;
+  width: 80px;
+  background: rgb(255, 180, 34);
+  height: 40px;
+  color:black;
+  font-size: 20px;
+  border-radius: 5px;
+  line-height: 40px;
+  text-align: center;
+}
+
+.conver-link:hover, .conver-link2:hover{
+  color:white;
+  text-decoration: none;
+}
 
 
+.conver-link{
+  position: absolute;
+  right:150px;
+}
+
+.conver-link2{
+  position: absolute;
+  right:30px;
+}
+
+.user-information .title, .user-information .email{
+  font-size: 20px;
+  color: rgb(255, 180, 34);
+}

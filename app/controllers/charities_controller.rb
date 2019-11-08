@@ -6,7 +6,7 @@ class CharitiesController < ApplicationController
   def listings
   
     if(params.has_key?(:search))
-      @charities = Charity.where(["title LIKE ?","%#{params[:search]}%"]).paginate(page: params[:page],per_page:6)
+      @charities = Charity.where(["summary LIKE ?","%#{params[:search]}%"]).paginate(page: params[:page],per_page:6)
     else
       @charities = Charity.paginate(page: params[:page],per_page:6)
 
@@ -14,6 +14,7 @@ class CharitiesController < ApplicationController
 
     if (params.has_key?(:location))
       @charities = Charity.where(location:params[:location]).paginate(page: params[:page],per_page:3)
+  
     end
 
     if (params.has_key?(:category))
@@ -47,9 +48,8 @@ class CharitiesController < ApplicationController
 
   def edit
     # only allows user to access the edit page of his own listings
-    if current_user.id == Charity.find(params[:id]).user.id
-      @charity = Charity.find(params[:id])
-    else
+    @charity = Charity.find(params[:id])
+    if current_user.id != @charity.organization.user_id
       redirect_to root_path
     end
   end

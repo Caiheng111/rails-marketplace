@@ -1,30 +1,51 @@
+<div class="conversation-section">
 
+  <div class="conversation-image">
 
-<div class="columns">
+  </div>
 
-  <div class="column is-7">
-    <h3 class="title is-3">Conversations</h3>
+  <div class="container">
+
+   <h3 class="conversation-title">Conversations Listing</h3>
+
+   <div class="content">
     <% @conversations.each do |conversation| %>
-      <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
-        <% if conversation.sender_id == current_user.id %>
-          <% recipient = User.find(conversation.recipient_id) %>
+        <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+          <% if conversation.sender_id == current_user.id %>
+            <% recipient = User.find(conversation.recipient_id) %>
 
-        <% else %>
-          <% recipient = User.find(conversation.sender_id) %>
-        <% end %>
-        <% unless current_user.id == recipient %>
-          <div class="columns">
-            <div class="column">
-              <% if current_user.user_type='organization' %>
-              <div class="inline-block"><%= link_to recipient.email, conversation_messages_path(conversation) %></div>
-              <% elsif current_use.user_type='donor'%>
-              <div class="inline-block"><%= link_to recipient.organization.title, conversation_messages_path(conversation) %></div>
-             
-              <% end %>
+          <% else %>
+            <% recipient = User.find(conversation.sender_id) %>
+          <% end %>
+          <% unless current_user.id == recipient %>
+            <div class="user-information">
+                <% if current_user.user_type='organization' %>
+                  <h4>User Email</h4>
+                  <span class="email"><%=recipient.email %></span>
+                  <%= link_to "Details", conversation_messages_path(conversation),class:"conver-link" %>
+                  <%= link_to "Delete", conversation_path(conversation),method: :delete ,class:"conver-link2"%>
+                <% elsif current_use.user_type='donor'%>
+                  <h4>Organization title</h4>
+                  <span class="title"><%=recipient.organization.title %></span>
+                  <%= link_to "Details", conversation_messages_path(conversation),class:"conver-link" %>
+                  <%= link_to "Delete", conversation_path(conversation),method: :delete ,class:"conver-link2"%>
+                <% end %>
             </div>
-          </div>
+          <% end %>
         <% end %>
       <% end %>
-    <% end %>
+   
+   </div>
+
   </div>
 </div>
+
+
+
+
+
+
+
+
+
+
