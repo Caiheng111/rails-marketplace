@@ -1,34 +1,59 @@
 
 
+
+<div class="messages-section">
+
+<div class="image-message">
+
+</div>
+
+<div class="container">
+
+
+  <% if @over_ten %>
+    <%= link_to "Show previous", '?m=all', class:'button is-link' %>
+  <% end %>
+
+    <div id="messages", class="message-box">
+        <h1>conversations</h1>
+      <% @messages.each do |message| %>
+        <% if message.body %>
+       
+          <div class="message-body">
+            <% user = User.find(message.user_id) %>
+            <span class="name"><%= user.email %></span>  <span><%= message.message_time %></span> 
+            <p><%= message.body %></p>
+          
+          </div>
+          
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="message-textarea">
+      <%= form_for [@conversation, @message] do |f| %>
+        <%= f.text_area :body, class: "textarea", placeholder: "Enter messages here...", class:"textarea-message" %>
+        <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
+        <div >
+          <%= f.submit "Send Message", class:"message-button"%>
+        </div>
+
+      <% end %>
+
+    </div>
+
+
   
 
+</div>
 
-<% if @over_ten %>
-  <%= link_to "Show previous", '?m=all', class:'button is-link' %>
-<% end %>
+</div>
 
-<section id="messages" class="mb4">
-  <% @messages.each do |message| %>
-    <% if message.body %>
-      <% user = User.find(message.user_id) %>
-      <article class="message is-dark">
-        <div class="message-body">
-         
-          <div class="inline-block"><strong><%= user.email %></strong> <%= message.message_time %></div>
-          <div class="block pt4">
-            <div class="f4"><%= message.body %></div>
-          </div>
-        </div>
-      </article>
-    <% end %>
-  <% end %>
-</section>
 
-<%= form_for [@conversation, @message] do |f| %>
-  <%= f.text_area :body, class: "textarea", placeholder: "Inquire about a trade..." %>
-  <%= f.text_field :user_id, value: current_user.id, type: "hidden"  %>
-  <div class="text-align-right">
-    <%= f.submit "Send message", class: "button is-link is-large mt3" %>
-  </div>
 
-<% end %>
+
+
+
+
+
+

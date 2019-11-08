@@ -28,10 +28,10 @@
 
                     <% if user_signed_in? && current_user.id != @charity.organization.user_id %>
                         <i class="fa fa-commenting" aria-hidden="true"></i>
-                        <%= link_to "Message #{@charity.organization.title}", conversations_path(sender_id: current_user.id, recipient_id: @charity.organization.user_id), method: 'post', class:"add-cart is-link" %>
+                        <%= link_to "Message #{@charity.organization.title}", conversations_path(sender_id: current_user.id, recipient_id: @charity.organization.user_id), method: 'post', class:"message-button is-link" %>
                     <% elsif user_signed_in? && current_user.id == @charity.organization.user_id  %>
                     <i class="fa fa-commenting" aria-hidden="true"></i>
-                        <%= link_to "Chat with Organizer", conversations_path, class:"message-button" %>
+                        <%= link_to "Messages", conversations_path, class:"message-button2" %>
                     <% end %>
                 </div>
                 
@@ -98,7 +98,6 @@
                                 <span>Goal: $ <span class="raised-number"> <%= charity.raised_goal %></span></span>
                             </div>
 
-                        
                         </div>    
                     </div> 
                     <%end%>
