@@ -9,7 +9,7 @@ body, h1{
 }
 
 .home{
-  height: 1400px;
+  height: 1800px;
 }
 
 .clear-padding{
@@ -50,7 +50,6 @@ body, h1{
 }
 
 .carousel-caption p{
- 
   font-weight: 1000;
    font-size: 20px;
    font-family: 'Merriweather', serif;
@@ -63,7 +62,6 @@ body, h1{
 
 .project-one{
   position: relative;
-
   height: 300px;
   width: 490px;
   background-image: url('project3.jpg');
@@ -106,7 +104,6 @@ body, h1{
 }
 
 .donate-button2{
-  
   position: absolute;
   top:230px;
   left:320px;
@@ -169,9 +166,8 @@ body, h1{
 
 .aboutUs .container{
   text-align:center;
-  padding-top:100px;
-  padding-left:120px;
-  padding-right: 120px;
+  padding-top:80px;
+ 
 }
 
 .aboutUs .info{
@@ -185,6 +181,83 @@ body, h1{
   border:0;
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
+}
+
+.aboutUs .infor-box .container{
+  padding-left:40px;
+  padding-right: 40px;
+}
+
+.aboutUs .title-infor{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.aboutUs .title-infor h2{
+  margin-bottom: 30px;
+  line-height: 40px;
+}
+
+.aboutUs .box1{
+  height: 250px;
+  background-image: url('aboutus1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.aboutUs .box1:hover{
+  
+  
+}
+.aboutUs .box2{
+  height: 250px;
+  background-image: url('aboutus2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.aboutUs .box3{
+  height: 250px;
+
+  background-image: url('aboutus3.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.aboutUs .box-infor{
+  position: relative;
+  padding-top: 30px;
+  padding-left:20px;
+  padding-right:20px;
+
+  background: #f6f4ee;
+  height: 250px;
+}
+
+.aboutUs .box-infor p{
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.aboutUs .box-infor .signIn{
+  position: absolute;
+  left:120px;
+  bottom: 40px;
+  display: block;
+  height: 35px;
+  width: 120px;
+  background: rgb(255, 180, 34);
+  color:black;
+  font-size: 15px;
+  border-radius: 20px;
+  font-family: 'Merriweather', serif;
+  line-height: 35px;
+}
+
+.aboutUs .desc{
+  height: 130px;
 }
 
 

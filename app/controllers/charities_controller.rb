@@ -1,7 +1,7 @@
 class CharitiesController < ApplicationController
 
   before_action :set_charity, only:[:edit, :update, :show, :destroy]
-  before_action :authenticate_user!, :except => [:listings]
+  before_action :authenticate_user!, :except => [:listings, :show]
 
   def listings
   

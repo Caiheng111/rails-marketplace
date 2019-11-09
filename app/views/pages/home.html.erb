@@ -57,45 +57,112 @@
 
 
   <div class="projects">
-
     <div class="row ">
-    <div class="col-md-4  mx-auto clear-padding-col clear-padding-row">
-      <div class="project-one clear-col">
-          <h1>Today is the day to  <br>
-          reach out and lend a  <br>
-          helping hand</h1>
-          <%= link_to 'View More', charity_path(id:"22"), class: "donate-button2" %>
+      <div class="col-md-4  mx-auto clear-padding-col clear-padding-row">
+        <div class="project-one clear-col">
+            <h1>Today is the day to  <br>
+            reach out and lend a  <br>
+            helping hand</h1>
+            <%= link_to 'View More', charity_path(id:"22"), class: "donate-button2" %>
+        </div>
+      </div>
+      <div class="col-md-4  mx-auto clear-col">
+      <div class="project-two">
+            <h1>Even the smallest of<br> donations can help change a life</h1>
+            <%= link_to 'View More', charity_path(id:"22"), class: "donate-button2" %>
+        </div>
+      
+      </div>
+      <div class="col-md-4  mx-auto clear-col">
+        <div class="project-three">
+            <h1>Become a volunteer. You’ll feel the <br>benefits instantly</h1>
+            <%= link_to 'View More', charity_path(id:"22"), class: "donate-button2" %>
+        </div>
+
       </div>
     </div>
-    <div class="col-md-4  mx-auto clear-col">
-    <div class="project-two">
-          <h1>Even the smallest of<br> donations can help change a life</h1>
-           <%= link_to 'View More', charity_path(id:"22"), class: "donate-button2" %>
-      </div>
-    
-    </div>
-    <div class="col-md-4  mx-auto clear-col">
-      <div class="project-three">
-          <h1>Become a volunteer. You’ll feel the <br>benefits instantly</h1>
-           <%= link_to 'View More', charity_path(id:"22"), class: "donate-button2" %>
-      </div>
-
-    </div>
-  </div>
-
-
-
-
   </div>
 
   <div class="aboutUs">
     <div class="container">
-      <h3>GoodGiving connects nonprofits, donors, and companies in nearly every country around the world. We help local nonprofits access the funding, tools, training, and support they need to become more effective.</h3>
 
-      <button class="info">Know More</button>
+      <div class="title-infor">
+        <h2>Who We Are</h2>
+        <h3>GoodGiving connects nonprofits, donors, and companies in nearly every country around the world. We help local nonprofits access the funding, tools, training, and support they need to become more effective.</h3>
+      </div>
+
+      <div class="infor-box">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mx-auto">
+              <div class="box1">
+                
+              </div>
+
+              <div class="box-infor">
+                <div class="desc">
+                  <p>Nonprofits around the world apply and join GlobalGiving to access more funding, to build new skills, and to make important connections.</p>
+                </div>
+                
+                <%= link_to 'Volunteer', user_session_path,class:"signIn" %>
+              </div>
+              
+            </div>
+            <div class="col-md-4 mx-auto">
+              <div class="box2">
+              
+              </div>
+              <div class="box-infor">
+                <div class="desc">
+                 <p>People like you give what you can to your favorite projects; you feel great when you get updates about how your money is put to work by trusted organizations.</p>
+                </div>
+                <%= link_to 'Donor', user_session_path,class:"signIn" %>
+              </div>
+            
+            </div>
+            <div class="col-md-4 mx-auto box3">
+              <div class="box3">
+              
+              </div>
+              <div class="box-infor">
+                <div class="desc">
+                <p>Generous organizations and their employees further support high-impact projects, helping local communities thrive.</p>
+                </div>
+                <%= link_to 'Organization', user_session_path,class:"signIn" %>
+              </div>
+            
+            </div>
+          </div>
+        </div> 
+      </div>
+      
     </div>
-
   </div>
+
+
+
+  <div class="number-count">
+    <div class="col-md-3">
+      <h2 class="timer count-title count-number" data-to="300" data-speed="1000"></h2>
+      <h4 class="count-text">year</h4>
+    </div>
+    <div class="col-md-3">
+    <h2 class="timer count-title count-number" data-to="3000" data-speed="1000"></h2>
+      <h4>year</h4>
+    </div>
+    <div class="col-md-3">
+    <h2 class="timer count-title count-number" data-to="4343" data-speed="1000"></h2>
+      <h4>year</h4>
+    </div>
+    <div class="col-md-3">
+    <h2 class="timer count-title count-number" data-to="438" data-speed="1000"></h2>
+      <h4>year</h4>
+    </div>
+    
+  
+  </div>
+
+
 
 
 </div>

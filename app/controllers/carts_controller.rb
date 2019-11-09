@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
  
   def index
@@ -9,6 +10,7 @@ class CartsController < ApplicationController
 
  
   def show
+  
     @cart = Cart.find(params[:id])
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
@@ -31,6 +33,8 @@ class CartsController < ApplicationController
     )
 
     @session_id = session.id
+   
+
   end
 
  
