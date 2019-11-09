@@ -101,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_11_03_062422) do
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
-
   create_table "organizations", force: :cascade do |t|
     t.string "title"
     t.text "location"
