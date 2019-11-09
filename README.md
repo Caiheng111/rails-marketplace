@@ -1,6 +1,6 @@
 
 
-# e-commance marketplace website(Goodgiving)
+# E-commance website(Goodgiving)
 
 ## contents
 1. Identification of the problem you are trying to solve by building this particular marketplace app.(R7)
@@ -54,11 +54,99 @@ The changes brought about by the Goodgiving online donation model are not limite
 
 ## 5.Description of your marketplace app (website)(R11)
 
+  * ***Purpose***
+
+      The purpose of the Goodgiving is to remove the intermediary. The website itself serves as a donation platform. After the local community government or related agency company publishes the donation project, people can browse directly on the website. The amount of the donation of the website management organization is controlled by everyone. Scope, unlike a donation website, donors do not need to make monthly donations. Goodgiving's donations go out completely and voluntarily. After understanding the specific story and background of the project, the donor class randomly chooses to donate a small amount. Donors can also directly communicate with the organization that initiated the project to learn more about the project and decide whether to make a donation. Without third-party intermediaries, donors are more likely to believe in the authenticity and reliability of donations. Even after learning about the project background, you can register as a voluntee on the website.
 
 
+  * ***Functionality / features***
+
+    1. Login and sign up function (mutilple users)
+        User gem devise to set the multiple user authentication, user can sign up as a donor/voluntter or a organization. Once they signup, they can login and update their password.
+        *  When sign up as a organization（as a new organization）, the navbar will show the link profile, after clicking that link, the organization can add their profile information.
+
+        * A dropdown menu will show out (including post a project/All projects/edit profile/Message), once the organization add their profile information on website.
+
+        * When sign up ad a donor, donor can send message to the organization who post that project and donate money.
+
+        * When sign up as a volunteer, the navbar will show the link profile, after clicking that link, the volunteer can add their profile information.
+  
+
+    2.  authentication for donating and sending message 
+        * User who hae not logined or signed up can't donate and send messages each other. they only can browse the website
+
+    3.   authentication and security for user and project information
+        * User only can access to their inly profile or edit(delete) their own projects. if they try to access other user's information, they will be leaded to the home page
+
+    4.  Searching, sorting and filtering capability
+        * In the proejcts listing page, user can search the project by key word
+        * In the proejcts listing page, user can choose projects by location listing
+        * In the proejcts listing page, user can choose projects by project category listing
+
+    5.  page separation function
+        * Used gem 'will-pagination' to divide the proejcts
+
+    6.  show the raised percentage in project
+        * User can see the raised percentage in project 
+
+    7.  Internal user messaging system within the app
+        * User can send message each other when they logged in
+        
+
+    8.  A payment system for your product. (e.g. Stripe)
+       * Setted Stripe to finish the payment function
+
+    9.  Admin user account for the admin user to administer the site
+      * Add the admin user authentication to manage the wensite information
+      * Admin user can edit or delete all projects information and user profile information
+
+    10. responsive layout for phone size
+
+
+
+  * ***Sitemap***
+
+   ![menua](docs/heng-T2A2-Marketplace-sitemap.png)
+
+
+
+  * ***Screenshots***
+
+
+  ![menua](docs/heng-T2A2-Marketplace-screenshot1.png)
+
+  ![menua](docs/heng-T2A2-Marketplace-screenshot2.png)
+
+  ![menua](docs/heng-T2A2-Marketplace-screenshot3.png)
+
+  ![menua](docs/heng-T2A2-Marketplace-screenshot4.png)
+
+  ![menua](docs/heng-T2A2-Marketplace-screenshot5.png)
+
+  ![menua](docs/heng-T2A2-Marketplace-screenshot6.png)
+
+
+
+
+  * ***Target audience***
+
+    *  Organizations or Communities who need raise money for local people.
+    *  Donor who are happy to donate a liite money to spme commmunities which need help.
+    *  Volunteer who are happy to join a project to offer help.
+
+
+  * ***Tech stack (e.g. html, css, deployment platform, etc)***
+
+    *  HTML5
+    *  CSS3
+    *  jQuery
+    *  AWS s3
+    *  Heroku
+    *  Ruby gems
+    *  Bootstrap 4
+ 
 
 ## 6.User stories for your app(R12)
-
 
 
 * ***user(Organizations)***
@@ -135,8 +223,6 @@ The changes brought about by the Goodgiving online donation model are not limite
 
 
 
-
-
 ## 10.Detail any third party services that your app will use(R16)
 
 * ***AWS(S3 buket)***
@@ -166,6 +252,28 @@ The changes brought about by the Goodgiving online donation model are not limite
     * heroku rake:db migrate
     * heroku apps:rename goodgiving
 
+ * ***Stripe Payment***
+
+    * bundle add stripe
+    * Login stripe and set API key
+    * Add the API key in rials (EDITOR="code --wait" rails credentials:edit)
+    * using Stripe’s checkout to charge our users' credit card
+    * Add webhook to provide information
+
+
+
+## 11.Describe your projects models in terms of the relationships (active record associations) they have with        each other(R17)
+
+
+
+
+
+
+
+
+
+## 12.Discuss the database relations to be implemented in your application(R18)
+
 
 
 
@@ -185,4 +293,31 @@ The changes brought about by the Goodgiving online donation model are not limite
 ![menua](docs/heng-T2A2-Marketplace-project-schema5.png)
 
 
+
+## 14. Describe the way tasks are allocated and tracked in your project(R20)
+
+ * ***App Plan Management***
+
+    * Decide a idea
+    * Graw the ERD draft
+    * Finish the first ERD
+    * Look for some website design to inspire the website layout
+    * check all relationship between models
+    * Add devise to create multiple users
+    * Add organization , volunteer  and donor models
+    * Add organization , volunteer  and donor controllers and views
+    * Add navbar
+    * Add organization profile page and projects page
+    * Add voluntter profile page 
+    * Add charities model and controllers
+    * Add the cart function and stripe function
+    * Add message board function
+    * Add sort and filter fucntion
+    * Add bootstrap to design layout(responsive)
+    * heroku deploy and enter data
+    * check all function if work in after deployed
+    * Add css media query to layout responsive
+
+
+![menua](docs/heng-T2A2-Marketplace-project-management.png)
 
