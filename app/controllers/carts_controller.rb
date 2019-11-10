@@ -28,7 +28,7 @@ class CartsController < ApplicationController
                 cart_id: @cart.id
             }
         },
-        success_url: "#{root_url}payments/success?userId=#{current_user.id}&listingId=#{@cart.id}",
+        success_url: "#{root_url}payments/success?userId=#{current_user.id}&cartId=#{@cart.id}",
         cancel_url: "#{root_url}listings"
     )
 
