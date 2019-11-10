@@ -83,8 +83,24 @@
 
 // index page
 .organization-index{
-  height: 1300px;
+  height: auto;
 }
+
+.organization-index .container{
+  margin-bottom: 100px;
+  padding-top:50px;
+  text-align: center;
+}
+
+.organization-index .container h1{
+  margin-bottom: 30px;
+  font-family: 'Merriweather', serif;
+}
+.organization-index .container h4{
+
+  font-family: 'Open Sans', sans-serif;
+}
+
 
 
 

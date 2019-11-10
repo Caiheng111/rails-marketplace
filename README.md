@@ -102,6 +102,8 @@ The changes brought about by the Goodgiving online donation model are not limite
 
     10. responsive layout for phone size
 
+    11. (authentication）The user need login first when they want to send message and donate
+
 
 
   * ***Sitemap***
@@ -297,6 +299,32 @@ The changes brought about by the Goodgiving online donation model are not limite
       validates_presence_of :body, :conversation_id, :user_id
     ```
 
+
+* ***Rails if consition (added in html)***
+
+ * The html.erb file in rails help me make the navbar link changable, for emaple, this if(end) condition can show the different links on navbar when the user logged_in or not.
+    
+    ```txt
+        <% if user_signed_in? && current_user.user_type=="organization" %>
+          <% if  current_user.organization !=nil && current_user.organization.title !=nil %>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Welcome Back !<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Post a Project", new_charity_path%> </li> 
+                  <li role="separator" class="divider"></li>
+                <li><%= link_to "All Projects", charities_path%> </li>
+                  <li role="separator" class="divider"></li> 
+                <li><%= link_to "Edit Your Profile", edit_organization_path(current_user.organization) %> </li> 
+                  <li role="separator" class="divider"></li> 
+                <li> <%= link_to "Messages", conversations_path %></li>
+              </ul>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li> 
+          </li>
+          <% else %>
+            <li> <%= link_to "Profile", organizations_path %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %> </li> 
+          <% end %>
+    ```
 
 
 
