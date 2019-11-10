@@ -126,8 +126,6 @@ The changes brought about by the Goodgiving online donation model are not limite
   ![menua](docs/heng-T2A2-Marketplace-screenshot6.png)
 
 
-
-
   * ***Target audience***
 
     *  Organizations or Communities who need raise money for local people.
@@ -135,10 +133,11 @@ The changes brought about by the Goodgiving online donation model are not limite
     *  Volunteer who are happy to join a project to offer help.
 
 
-  * ***Tech stack (e.g. html, css, deployment platform, etc)***
+  * ***Tech stack***
 
     *  HTML5
     *  CSS3
+    *  Ruby on rails 5
     *  jQuery
     *  AWS s3
     *  Heroku
@@ -218,7 +217,85 @@ The changes brought about by the Goodgiving online donation model are not limite
 
 
 
+## 9.Explain the different high-level components (abstractions) in your app(R15)
 
+
+* ***Rails Routes***
+  * In my marketplace, I insert a snippet like the following:, which realy help me save time to write route code
+    - resources :line_items
+    - resources :carts
+    - resources :charities
+
+
+   * in Rails ultimately gives you the following:
+    - get 'charities' => 'charities#index'
+    - get 'phocharitiestos/new' => 'charities#new'
+    - post 'charities' => 'charities#create'
+    - get 'charities/:id' => 'charities#show'
+    - get 'charities/:id/edit' => 'charities#edit'
+    - patch 'charities/:id' => 'charities#update'
+    - delete 'charities/:id' => charities#destroy
+
+
+* ***Rails’ Action View Form Helper***
+
+  ```txt
+    <%= form_with(model: @volunteer, local: true) do |form| %> ......
+    created form fields like text_field, text_area, file_field
+      made selection boxes
+  ```
+
+* ***Rails before_action***
+  In each controller I have some before_action calls that check the appropriate level of permissions for a given CRUD operation.for example:
+
+  ```txt
+    before_action :set_charity, only:[:edit, :update, :show, :destroy]
+    before_action :authenticate_user!, :except => [:listings, :show]
+  ```
+  ```txt
+    before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+    before_action :set_cart, only: [:create]
+    before_action :authenticate_user!
+  ```
+
+  ```txt
+    before_action :find_conversation
+  ```
+
+
+* ***Rails Active Records(CRUD: Reading and Writing Data)***
+
+ * The rials console provide a very convenient way to access to teh database.For example:
+   
+  ```txt
+    users = User.all
+    User.create()
+    User.delete_all
+    user = User.find_by(name: 'David')
+  ```
+
+
+ * Active Record allows me to validate the state of a model before it gets written into the database.belows are some validations I used in my app:
+   
+  ```txt
+    validates :title, presence: true, length: { minimum: 3, maximum: 50 }
+    validates :summary, :challenges, :solution,  presence: true, length: { minimum: 10, maximum: 1000 }
+  ```
+  ```txt
+    validates :name, presence: true, length: { minimum: 3, maximum: 20 }
+    validates :description, presence: true, length: { minimum: 10, maximum: 1000 }
+
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, presence: true, length: { maximum: 105 },
+              uniqueness: { case_sensitive: false },
+              format: { with: VALID_EMAIL_REGEX }
+  ```
+  ```txt
+    validates_uniqueness_of :sender_id, scope: :recipient_id
+  ```
+  ```txt
+    validates_presence_of :body, :conversation_id, :user_id
+  ```
 
 
 
@@ -264,18 +341,201 @@ The changes brought about by the Goodgiving online donation model are not limite
 
 ## 11.Describe your projects models in terms of the relationships (active record associations) they have with        each other(R17)
 
+![menua](docs/heng-T2A2-Marketplace-ERD.png)
+
+The relationships have in my proejct models
+
+* ***has_one association***
+
+ 1. One organization only can has one user account, so a forienge key was added to the user organization
+      -  The organization table has a column (user_id)
+      - Belowns are code are added in organization table
+
+          ```txt
+            t.bigint "user_id"
+            t.index ["user_id"], name: "index_organizations_on_user_id"
+          ```
+
+      - Belowns are code are added in organization.rb  model file
+
+          ```txt
+          belongs_to :user
+          ```
+      - Belowns are code are added in organization.rb  model file
+
+          ```txt
+          has_one :organization
+          ```
 
 
 
+ 2. One Volunteer and one donor also only can has one user account, so a forienge key was added to the user organization
+      -  The organization table has a column (user_id)
+      - Belowns are code are added in organization table
 
+          ```txt
+          t.bigint "user_id"
+            t.index ["user_id"], name: "index_volunteers_on_user_id"
+          ```
+
+      - Belowns are code are added in volunteer.rb  model file
+          ```txt
+          belongs_to :user
+          ```
+      - Belowns are code are added in organization.rb  model file
+
+          ```txt
+          has_one :volunteer
+          ```
+
+* ***has_many association***
+
+
+ 1. One category can including many charity projects,
+      -  The chairty table has a column (category_id)
+      - Belowns are code are added in charity table
+
+          ```txt
+              t.index ["category_id"], name: "index_charities_on_category_id"
+          ```
+
+      - Belowns are code are added in charity.rb  model file
+          ```txt
+          belongs_to :user
+          ```
+      - Belowns are code are added in category.rb  model file
+
+          ```txt
+          has_many :charities
+   
+         ```
+
+ 2. One organization can including many charity projects(One organization or community can post many projects to help local people)
+      -  The chairty table has a column (organization_id) 
+      - Belowns are code are added in charity table
+
+          ```txt
+              t.index ["organization_id"], name: "index_charities_on_organization_id"
+          ```
+
+      - Belowns are code are added in charity.rb  model file
+          ```txt
+          belongs_to :organization
+          ```
+      - Belowns are code are added in organization.rb  model file
+
+          ```txt
+          has_many :charities
+          ```
+ 3. One charity could be added to the donation listing many times(which means many donor can add this charity to listing to donate money), so
+      -  The line_items table has a column (charity_id) 
+      - Belowns are code are added in line_items table
+
+          ```txt
+              t.index ["charity_id"], name: "index_line_items_on_charity_id"
+          ```
+
+      - Belowns are code are added in line_item.rb  model file
+          ```txt
+          belongs_to :charity
+          ```
+      - Belowns are code are added in chairty.rb  model file
+
+          ```txt
+          has_many :line_items
+          ```
+ 4. One cart(donation listing) could be added to the donation listing many times(which means many donor can add this charity to listing to donate money), so
+      -  The line_items table has a column (cart_id) 
+      - Belowns are code are added in line_items table
+
+          ```txt
+              t.index ["cart_id"], name: "index_line_items_on_cart_id"
+          ```
+
+      - Belowns are code are added in line_item.rb  model file
+          ```txt
+          belongs_to :cart
+          ```
+      - Belowns are code are added in cart.rb  model file
+
+          ```txt
+          has_many :line_items
+          ```
+ 5. One conversation can including many messages, so
+      -  The messages table has a column (conversation_id) 
+      - Belowns are code are added in messages table
+
+          ```txt
+              t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+          ```
+
+      - Belowns are code are added in message.rb  model file
+          ```txt
+          belongs_to :conversation
+          ```
+      - Belowns are code are added in conversation.rb  model file
+
+          ```txt
+          has_many :messages
+ 
+          ```
+ 5. One user can including many messages, so
+      -  The messages table has a column (user_id) 
+      - Belowns are code are added in messages table
+
+          ```txt
+               t.index ["user_id"], name: "index_messages_on_user_id"
+          ```
+
+      - Belowns are code are added in message.rb  model file
+          ```txt
+          belongs_to :user
+          ```
+      - Belowns are code are added in user.rb  model file
+
+          ```txt
+          has_many :messages
+          ```
 
 
 
 
 ## 12.Discuss the database relations to be implemented in your application(R18)
 
+* ***Relation between table User and organizations/ volunteers/ donors***
 
+  * The users table has the primary key
+  * the organization/ volunteer/ donor model has the user_id (foreign key)
 
+* ***Relation between table Organizations and charities***
+
+  * The organization table has the primary key
+  * the charity model has the organization_id (foreign key)
+
+* ***Relation between table categories and charities***
+
+  * The category table has the primary key
+  * the charity model has the category_id (foreign key)
+
+* ***Relation between table line_items and charities***
+
+  * The charity table has the primary key
+  * the line_items model has the charity_id (foreign key)
+
+* ***Relation between table line_items and carts***
+
+  * The cart table has the primary key
+  * the line_items model has the cart_id (foreign key)
+
+* ***Relation between table users and messages***
+
+  * The users table has the primary key
+  * the messages model has the user_id (foreign key)
+
+* ***Relation between table users and messages***
+
+  * The users table has the primary key
+  * the messages model has the user_id (foreign key)
 
 
 
