@@ -53,7 +53,7 @@
                     <% if user_signed_in? && current_user.admin? || current_user.organization != nil %>
                       <div class="button">
                         <button class="edit-button"><%= link_to 'Edit', edit_charity_path(charity),class:"edit" %></button>
-                        <button class="delete-button"><%= link_to 'Delete', charity_path(charity), method: :delete, class:"delete"%></button>
+                        <button class="delete-button"><%= link_to 'Delete', charities_path(charity), method: :delete, data: { confirm: 'Are you sure?' },class:"delete"%></button>
                       
                       </div>
                     <% end %>  

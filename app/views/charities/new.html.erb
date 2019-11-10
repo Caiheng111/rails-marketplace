@@ -67,10 +67,15 @@
               <%= form.label :Solution , class:'charity-lable'%><br />
                 <%= form.text_area :solution, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
             </div>
+
             <div class="form-group">
-              <%= form.label :donate_basic , class:'charity-lable'%><br />
-                <%= form.text_area :donate_basic, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+                <%= form.label :donate_basic , class:'charity-lable'%>
+                 <div class="input-group">
+                    <div class="input-group-addon">AUD</div>
+                    <%= form.number_field :donate_basic, autofocus: true, class:"form-control", id:"exampleInputAmount"  %>
+                </div>
             </div>
+
 
              <div>
                  <%= form.file_field :pictures, accept:
