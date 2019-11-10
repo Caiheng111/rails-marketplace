@@ -239,63 +239,63 @@ The changes brought about by the Goodgiving online donation model are not limite
 
 * ***Rails’ Action View Form Helper***
 
-  ```txt
-    <%= form_with(model: @volunteer, local: true) do |form| %> ......
-    created form fields like text_field, text_area, file_field
-      made selection boxes
-  ```
+    ```txt
+      <%= form_with(model: @volunteer, local: true) do |form| %> ......
+      created form fields like text_field, text_area, file_field
+        made selection boxes
+    ```
 
 * ***Rails before_action***
-  In each controller I have some before_action calls that check the appropriate level of permissions for a given CRUD operation.for example:
+    In each controller I have some before_action calls that check the appropriate level of permissions for a given CRUD operation.for example:
 
-  ```txt
-    before_action :set_charity, only:[:edit, :update, :show, :destroy]
-    before_action :authenticate_user!, :except => [:listings, :show]
-  ```
-  ```txt
-    before_action :set_line_item, only: [:show, :edit, :update, :destroy]
-    before_action :set_cart, only: [:create]
-    before_action :authenticate_user!
-  ```
+    ```txt
+      before_action :set_charity, only:[:edit, :update, :show, :destroy]
+      before_action :authenticate_user!, :except => [:listings, :show]
+    ```
+    ```txt
+      before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+      before_action :set_cart, only: [:create]
+      before_action :authenticate_user!
+    ```
 
-  ```txt
-    before_action :find_conversation
-  ```
+    ```txt
+      before_action :find_conversation
+    ```
 
 
 * ***Rails Active Records(CRUD: Reading and Writing Data)***
 
  * The rials console provide a very convenient way to access to teh database.For example:
-   
-  ```txt
-    users = User.all
-    User.create()
-    User.delete_all
-    user = User.find_by(name: 'David')
-  ```
+    
+    ```txt
+      users = User.all
+      User.create()
+      User.delete_all
+      user = User.find_by(name: 'David')
+    ```
 
 
  * Active Record allows me to validate the state of a model before it gets written into the database.belows are some validations I used in my app:
    
-  ```txt
-    validates :title, presence: true, length: { minimum: 3, maximum: 50 }
-    validates :summary, :challenges, :solution,  presence: true, length: { minimum: 10, maximum: 1000 }
-  ```
-  ```txt
-    validates :name, presence: true, length: { minimum: 3, maximum: 20 }
-    validates :description, presence: true, length: { minimum: 10, maximum: 1000 }
+    ```txt
+      validates :title, presence: true, length: { minimum: 3, maximum: 50 }
+      validates :summary, :challenges, :solution,  presence: true, length: { minimum: 10, maximum: 1000 }
+    ```
+    ```txt
+      validates :name, presence: true, length: { minimum: 3, maximum: 20 }
+      validates :description, presence: true, length: { minimum: 10, maximum: 1000 }
 
-    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    validates :email, presence: true, length: { maximum: 105 },
-              uniqueness: { case_sensitive: false },
-              format: { with: VALID_EMAIL_REGEX }
-  ```
-  ```txt
-    validates_uniqueness_of :sender_id, scope: :recipient_id
-  ```
-  ```txt
-    validates_presence_of :body, :conversation_id, :user_id
-  ```
+      VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+      validates :email, presence: true, length: { maximum: 105 },
+                uniqueness: { case_sensitive: false },
+                format: { with: VALID_EMAIL_REGEX }
+    ```
+    ```txt
+      validates_uniqueness_of :sender_id, scope: :recipient_id
+    ```
+    ```txt
+      validates_presence_of :body, :conversation_id, :user_id
+    ```
 
 
 
@@ -556,7 +556,7 @@ The relationships have in my proejct models
 
 ## 14. Describe the way tasks are allocated and tracked in your project(R20)
 
- * ***App Plan Management***
+ * ***Plan Management(Basic steps)***
 
     * Decide a idea
     * Graw the ERD draft

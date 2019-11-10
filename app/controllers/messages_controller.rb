@@ -32,11 +32,6 @@ class MessagesController < ApplicationController
     @message = @conversation.messages.new
   end
 
-  # def destroy
-  #     @message.destroy
-  #     redirect_to  conversation_messages_path(@conversation)
-  # end
-
 
 
 

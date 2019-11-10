@@ -8,6 +8,8 @@ class ConversationsController < ApplicationController
   end
 
   def create
+
+    # create a convrsation if te recipient_id and sender_id matches 
     if Conversation.between(params[:sender_id], params[:recipient_id]).present?
       @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
     else

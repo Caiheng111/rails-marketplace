@@ -4,6 +4,8 @@ class CharitiesController < ApplicationController
   before_action :authenticate_user!, :except => [:listings, :show]
 
   def listings
+
+    # add search function  
   
     if(params.has_key?(:search))
       @charities = Charity.where(["summary LIKE ?","%#{params[:search]}%"]).paginate(page: params[:page],per_page:6)
@@ -11,19 +13,19 @@ class CharitiesController < ApplicationController
       @charities = Charity.paginate(page: params[:page],per_page:6)
 
     end
-
+   # add sort function  
     if (params.has_key?(:location))
       @charities = Charity.where(location:params[:location]).paginate(page: params[:page],per_page:3)
   
     end
-
+   # add filter function  
     if (params.has_key?(:category))
       @charities = Charity.where(category:params[:category]).paginate(page: params[:page],per_page:3)
     end
 
   end
 
-
+  # show the current organization's projects
   def index
     @charities=current_user.organization.charities.paginate(page: params[:page],per_page:6)
   end

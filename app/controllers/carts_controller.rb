@@ -10,7 +10,7 @@ class CartsController < ApplicationController
 
  
   def show
-  
+  # add the stripe payment in the cart show page
     @cart = Cart.find(params[:id])
     session = Stripe::Checkout::Session.create(
         payment_method_types: ['card'],
