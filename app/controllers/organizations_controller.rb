@@ -17,7 +17,7 @@ class OrganizationsController < ApplicationController
     @organization=current_user.create_organization(organization_params)
  
     if @organization.save
-        redirect_to organization_path(@organization)
+        redirect_to root_path
     else
         render 'new'
     end 
