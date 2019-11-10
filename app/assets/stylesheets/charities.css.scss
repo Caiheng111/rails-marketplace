@@ -127,8 +127,59 @@ body, h2,h1,h3,h4{
   height: 300px;
   background-image: url('listing-charity-bg.jpg');
   background-repeat: no-repeat;
-  background-size: cover;;
+  background-size: cover;
+ 
 }
+
+.hover-box{
+
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.section-listings .listing-picture{
+  height: 228px;
+  width: 343px; 
+}
+
+.image-hover{
+  
+  padding-left: 110px;
+  height: 0px;
+  width: 343px;
+  background: rgb(255, 180, 34);
+  position: absolute;
+  bottom:0;
+  left:9px;
+  transition: 0.4s ease-in-out;  
+}
+
+.hover-box:hover .image-hover{
+  height: 80px;
+  opacity: .8;
+}
+
+.donate-basic{
+  margin-top:20px;
+  display: block;
+  height: 40px;
+  width: 120px;
+  background: white;
+  line-height: 40px;
+  text-align: center;
+  color:black;
+  border-radius: 10px;
+  
+}
+
+.donate-basic:hover{
+  text-decoration:none;
+  color:rgb(255, 180, 34);
+}
+
+
+
 
 .section-listings .container{
   margin-top:50px;
@@ -193,10 +244,9 @@ body, h2,h1,h3,h4{
 
 }
 
-.section-listings .listing-picture{
-  height: 228px;
-  width: 343px;
-}
+
+
+
 .section-listings .listing-row{
   margin-bottom: 30px;
 }
@@ -315,6 +365,37 @@ body, h2,h1,h3,h4{
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.hover-box2{
+
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.section-listings .listing-picture{
+  height: 228px;
+  width: 343px; 
+}
+
+.image-hover2{
+  
+  padding-left: 100px;
+  height: 0px;
+  width: 300px;
+  background: rgb(255, 180, 34);
+  position: absolute;
+  bottom:0;
+  left:8.3%;
+  transition: 0.4s ease-in-out;  
+}
+
+.hover-box2:hover .image-hover2{
+  height: 80px;
+  opacity: .8;
+}
+
+
 
 .charity-show .listing-picture{
   margin-bottom: 60px;

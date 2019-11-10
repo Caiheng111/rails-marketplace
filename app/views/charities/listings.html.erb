@@ -61,10 +61,21 @@
             <% if @charities !=nil %>
               <% @charities.each do |charity| %>
                   <div class="col-md-4  col-sm-auto listing-row">
-                    <% charity.pictures.each do |picture| %>
-                        <%= image_tag picture, class:"listing-picture" %>
-                        <% break %>
-                    <% end %>
+                    <div class="hover-box">
+                      <% charity.pictures.each do |picture| %>
+                          <%= image_tag picture, class:"listing-picture" %>
+                          <% break %>
+                      <% end %>
+                    
+                    <div class="image-hover">
+
+
+                     <%= link_to  'Donate Now', charity_path(charity), class:"donate-basic" %> 
+                    </div>
+
+                   </div>
+
+
                     <div class="project-infor">
                       <div class="title-top">
                         <h3 class="category"><%= charity.category.title %></h3>
