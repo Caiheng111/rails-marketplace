@@ -75,7 +75,7 @@ The changes brought about by the Goodgiving online donation model are not limite
     2.  authentication for donating and sending message 
         * User who hae not logined or signed up can't donate and send messages each other. they only can browse the website
 
-    3.   authentication and security for user and project information
+    3.  authentication and security for user and project information
         * User only can access to their inly profile or edit(delete) their own projects. if they try to access other user's information, they will be leaded to the home page
 
     4.  Searching, sorting and filtering capability
