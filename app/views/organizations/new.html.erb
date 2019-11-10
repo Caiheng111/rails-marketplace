@@ -19,27 +19,27 @@
          
             <div class="form-group">
                 <%= form.label :'community Title' , class:'volun-lable'%><br />
-                <%= form.text_field :title, autofocus: true, autocomplete: "Title",class:"form-control" %>
+                <%= form.text_field :title, autofocus: true, autocomplete: "Title",class:"form-control", placeholder:"Please enter a title(max 50 words)" %>
             </div>
 
             <div class="field">
                 <%= form.label :Description , class:'volun-lable'%><br />
-                <%= form.text_area :description, autofocus: true, autocomplete: "Description",class:"form-control" %>
+                <%= form.text_area :description, autofocus: true, autocomplete: "Description",class:"form-control",placeholder:"Please enter description(min 50 words)"  %>
             </div>
 
             <div class="form-group">
                 <%= form.label :Website , class:'volun-lable'%><br />
-                <%= form.text_area :website, autofocus: true, autocomplete: "Website",class:"form-control" %>
+                <%= form.text_area :website, autofocus: true, autocomplete: "Website",class:"form-control",placeholder:"Please enter your website URL"  %>
             </div>
 
             <div class="form-group">
               <%= form.label :Location , class:'volun-lable'%><br />
-                <%= form.text_field :location, autofocus: true, autocomplete: "Location",class:"form-control" %>
+                <%= form.text_field :location, autofocus: true, autocomplete: "Location",class:"form-control",placeholder:"Please enter your location" %>
             </div>
             
 
             <div>
-                <%= form.submit "Submit",class:'oreganization-submit'%>
+                <%= form.submit "Submit",class:'oreganization-submit' %>
             </div>
 
         <% end %>

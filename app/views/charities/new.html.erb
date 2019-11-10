@@ -18,18 +18,18 @@
          
             <div class="form-group">
                 <%= form.label :Title , class:'charity-label'%><br />
-                <%= form.text_field :title, autofocus: true, autocomplete: "Enter you name",class:"form-control" %>
+                <%= form.text_field :title, autofocus: true, autocomplete: "Enter you name",class:"form-control" ,placeholder:"Please enter your title (max 50 words)"%>
               
             </div>
 
             <div class="field">
                 <%= form.label :Location , class:'charity-lable'%><br />
-                <%= form.text_area :location, autofocus: true, autocomplete: "Description",class:"form-control" %>
+                <%= form.text_area :location, autofocus: true, autocomplete: "Description",class:"form-control" ,placeholder:"Please enter the project location" %>
             </div>
 
             <div class="form-group">
                 <%= form.label :project_leader , class:'charity-lable'%><br />
-                <%= form.text_area :project_leader, autofocus: true, autocomplete: "project_leader",class:"form-control" %>
+                <%= form.text_area :project_leader, autofocus: true, autocomplete: "project_leader",class:"form-control",placeholder:"Please enter the leader name " %>
             </div>
 
             <div class="form-group">
@@ -42,7 +42,7 @@
                 <%= form.label :'raised of goal' , class:'charity-lable'%>
                  <div class="input-group">
                     <div class="input-group-addon">AUD</div>
-                    <%= form.number_field :raised_goal, autofocus: true, class:"form-control", id:"exampleInputAmount"  %>
+                    <%= form.number_field :raised_goal, autofocus: true, class:"form-control", id:"exampleInputAmount",placeholder:"Please enter the number 0-10,0000"   %>
                 </div>
             </div>
            
@@ -51,28 +51,28 @@
                 <%= form.label :current_raised , class:'charity-lable'%>
                  <div class="input-group">
                     <div class="input-group-addon">AUD</div>
-                    <%= form.number_field :current_raised, autofocus: true, class:"form-control", id:"exampleInputAmount"  %>
+                    <%= form.number_field :current_raised, autofocus: true, class:"form-control", id:"exampleInputAmount" ,placeholder:"Please enter the number 0-10,0000"  %>
                 </div>
             </div>
 
             <div class="form-group">
               <%= form.label :summary , class:'charity-lable'%><br />
-                <%= form.text_area :summary, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+                <%= form.text_area :summary, autofocus: true, autocomplete: "current_raised",class:"form-control",placeholder:"Please enter your title (min 10 words)" %>
             </div>
             <div class="form-group">
               <%= form.label :Challenges , class:'charity-lable'%><br />
-                <%= form.text_area :challenges, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+                <%= form.text_area :challenges, autofocus: true, autocomplete: "current_raised",class:"form-control",placeholder:"Please enter your title (min 10 words)" %>
             </div>
             <div class="form-group">
               <%= form.label :Solution , class:'charity-lable'%><br />
-                <%= form.text_area :solution, autofocus: true, autocomplete: "current_raised",class:"form-control" %>
+                <%= form.text_area :solution, autofocus: true, autocomplete: "current_raised",class:"form-control",placeholder:"Please enter your title (min 10 words)" %>
             </div>
 
             <div class="form-group">
                 <%= form.label :donate_basic , class:'charity-lable'%>
                  <div class="input-group">
                     <div class="input-group-addon">AUD</div>
-                    <%= form.number_field :donate_basic, autofocus: true, class:"form-control", id:"exampleInputAmount"  %>
+                    <%= form.number_field :donate_basic, autofocus: true, class:"form-control", id:"exampleInputAmount",placeholder:"Please enter the number 10-50"  %>
                 </div>
             </div>
 
