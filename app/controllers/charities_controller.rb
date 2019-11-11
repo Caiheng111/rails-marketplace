@@ -51,8 +51,10 @@ class CharitiesController < ApplicationController
   def edit
     # only allows user to access the edit page of his own listings
     @charity = Charity.find(params[:id])
-    if current_user.id != @charity.organization.user_id
-      redirect_to root_path
+    if current_user.admin?
+      
+    elsif current_user.id != @charity.organization.user_id 
+        redirect_to root_path
     end
   end
 
