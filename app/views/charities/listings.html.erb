@@ -2,7 +2,7 @@
 
 <div class="section-listings">
 
-    <div class="image-charity">
+    <div class="image-charity ">
 
     
     </div>
@@ -16,13 +16,11 @@
               <div class="row">
                 <%= form_tag charities_listings_path, :method => 'get', class: 'input-group'  do %>
                   <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for...' %>
-                  <span class="input-group-btn">
-                    <%= submit_tag "Search", class: "search-btn" %>
-                  </span>
+                  <span class="input-group-btn"><%= submit_tag "Search", class: "search-btn" %></span>
                 <% end %>
               </div>
             </li>
-            <li role="presentation" class="dropdown">
+            <li role="presentation" class="dropdown country">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 COUNTRY <span class="caret"></span>
               </a>
@@ -34,7 +32,7 @@
               
               </ul>
             </li>
-            <li role="presentation" class="dropdown">
+            <li role="presentation" class="dropdown category">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 THEME <span class="caret"></span>
               </a>
@@ -76,13 +74,11 @@
                    </div>
 
 
-                    <div class="project-infor">
+                    <div class="project-infor infor-responsive">
                       <div class="title-top">
                         <h3 class="category"><%= charity.category.title %></h3>
                         <%= link_to charity.title , charity_path(charity), class:"title" %>
                       </div>
-
-                
                       
                       <div class="content">
 

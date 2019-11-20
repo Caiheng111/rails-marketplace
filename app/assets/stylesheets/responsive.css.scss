@@ -1,71 +1,483 @@
 
 
 
+@media only screen and (max-width: 900px) {
+  .navbar{
+    width:380px !important;
+  }
 
-// regination information
-.section-regination{
-  height: 800px;
-}
 
-.section-regination .image-regination{
-  height: 800px;
-  background-image: url('organization-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;;
+  footer{
+    width:380px;
+    height: 100px;
+  }
 
-}
+  footer .responsive{
+  
+   display: none;
+  }
 
-.section-regination .vlounteer-regi{
-  padding-top:120px;
-}
 
-.vlounteer-regi{
-  padding-left:70px;
-  width: 500px;
-}
 
-.vlounteer-regi h2{
-  font-size: 30px;
-  font-family: 'Merriweather', serif;
+// login form
 
-}
+  .section-login{
+    height: 1100px;
+  }
 
-.vlounteer-regi h3{
-  font-size: 15px;
-  font-family: 'Merriweather', serif;
-  color:rgb(255, 180, 34);
-  line-height: 23px;
-
-}
+  .section-login .col-md-6{
+    width: 375px !important;
+  }
+  .section-login .row{
+    width: 375px !important;
+  }
+  
+  .section-login .image{
+    width: 394px;
+    height: 500px;
+  
+  }
+  .login .responsive-box{
+    width: 10px !important;
+  }
   
 
-.vlounteer-regi .volun-lable{
-  margin-top:14px;
-  margin-bottom: 12px;
-  font-size: 16px;
+  .login{
+    width: 300px !important;
+    padding-left:90px;
+    box-sizing: border-box;;
+  
+  }
+  .login h2{
+    font-size: 25px;
+  }
+  .section-login .login{
+    padding-top:80px;
+  }
 
+  .login .form-group{
+    width: 300px;
+  }
 
- 
-}
-
-.vlounteer-regi .form-control{
+.login .form-control{
   height: 40px;
-  border-radius:0;
+  width: 80%;
+  border-radius: 0;
   font-size: 15px;
 }
 
 
-.vlounteer-regi .form-control:focus{
-    border-color:rgb(255, 180, 34);
-    box-shadow:none;
+.login-button{
+  width: 80%;
  
 }
 
-.reganization-submit{
-  margin-top:20px;
-  width: 430px;
-  height: 30px;
-  background: rgb(255, 180, 34);
-  border:none;
-  font-size:18px;
+.new_user{
+  width: 300px;
+}
+
+
+// signup
+
+
+.section-signup{
+  height: 1200px;
+}
+
+.section-signup .col-md-6{
+  width: 375px !important;
+}
+.section-signup .row{
+  width: 375px !important;
+}
+
+.section-signup .image-signup{
+  width: 394px;
+  height: 500px;
+
+}
+
+
+.signup{
+  width: 300px;
+  padding-left:80px;
+  box-sizing: border-box;;
+
+}
+.signup h2{
+  font-size: 25px;
+}
+.section-signup .login{
+  padding-top:80px;
+}
+
+.signup .form-group{
+  width: 300px;
+}
+
+.signup .form-control{
+height: 40px;
+width: 80%;
+border-radius: 0;
+font-size: 15px;
+}
+
+
+.signup-button{
+width: 80%;
+
+}
+
+.new_user{
+width: 300px;
+}
+
+
+
+// organization new form
+
+.section-oregination{
+  min-height: 1300px;
+}
+
+.section-oregination .row{
+  width: 375px !important;
+
+}
+.section-oregination .col-md-6{
+  width: 375px !important;
+
+}
+
+
+.vlounteer-oregi{
+  width: 380px;
+  height: 100px;
+}
+
+.vlounteer-oregi .col-md-6{
+
+  width: 300px !important;
+}
+
+.section-oregination .image-oregination{
+  width: 394px;
+  height: 500px;
+
+}
+.vlounteer-oregi .responsive-box{
+  width: 10px !important;
+}
+
+
+.vlounteer-oregi{
+  width: 300px !important;
+
+}
+.vlounteer-oregi h2{
+  font-size: 25px;
+}
+.section-oregination .vlounteer-oregi{
+  padding-top:60px;
+}
+
+
+.section-oregination input{
+height: 40px;
+width: 300px !important;
+
+}
+
+.section-oregination textarea{
+  height: 40px;
+  width: 300px !important;
+  
+  }
+
+
+.section-oregination .reganization-submit{
+width: 70% !important;
+
+}
+
+.new_user{
+width: 300px;
+}
+
+
+// organization index
+
+.organization-index .org-index{
+  width: 380px;
+
+}
+
+.organization-index .left-info{
+  height: 400px;
+
+}
+
+.organization-index .container{
+  padding:30px;
+
+}
+
+
+
+  // index volunteer
+
+ .left-info{
+   height: 500px !important;
+ }
+
+
+
+//  new volunteer
+
+.section-volunteer{
+  min-height: 1500px;
+}
+
+.section-volunteer .col-md-6{
+  width: 375px !important;
+}
+.section-volunteer .row{
+  width: 375px !important;
+}
+
+.section-volunteer .image-volun{
+  width: 380px;
+  height: 500px !important;
+
+}
+
+
+.section-volunteer .vlounteer-info{
+  width: 300px !important;
+  padding-left:40px;
+  box-sizing: border-box;;
+
+}
+.vlounteer-info h2{
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.section-volunteer .vlounteer-info{
+  padding-top:80px;
+}
+
+.vlounteer-info .form-group{
+  width: 300px;
+}
+
+.section-volunteer textarea{
+  width: 300px;
+}
+
+
+.volunteer-create{
+width: 300px !important;
+
+}
+
+
+// charity new
+
+
+.section-charity{
+  min-height: 1600px;
+}
+
+.section-charity .col-md-6{
+  width: 375px !important;
+}
+.section-charity .row{
+  width: 375px !important;
+}
+
+.section-charity .image-charity{
+  width: 380px;
+  height: 500px !important;
+
+}
+
+
+.section-charity .charity-infor{
+  width: 300px !important;
+  padding-left:60px;
+  box-sizing: border-box;;
+
+}
+.charity-infor h2{
+  margin-bottom: 30px;
+  font-size: 25px;
+}
+.section-charity .charity-infor{
+  padding-top:80px;
+}
+
+.charity-infor .form-group{
+  width: 300px;
+}
+
+.section-charity textarea{
+  width: 300px;
+}
+
+
+.charity-submit{
+width: 300px !important;
+
+}
+
+
+// index charity
+
+.section-listings{
+  min-height: 2400px;
+}
+
+.section-listings .image-charity{
+  width: 380px;
+
+}
+
+.section-listings .project-infor{
+  width: 300px;
+  margin-left:0;
+}
+
+.all-projects .container{
+  padding:30px;
+}
+
+.section-listings .listing-picture{
+  background-size: cover;
+  width: 300px;
+}
+
+// listing charity
+
+.input-group{
+  margin-left: 70px;
+  margin-bottom: 40px;
+}
+
+.section-listings .country{
+  margin-left: 50px;
+
+}
+.section-listings .category{
+  margin-left:10px;
+
+}
+
+
+.search-bar .all-projects{
+  margin-left:100px;
+}
+
+ .infor-responsive{
+  width: 285px !important;
+  box-sizing: border-box;
+}
+.section-listings .search-btn {
+ color:black !important;
+  
+}
+
+.image-hover{
+  margin-left:-10px;
+}
+
+.donate-basic{
+  margin-left: -30px;
+}
+
+
+// show charity
+
+.charity-show .listing-picture{
+  width: 300px;
+
+}
+
+
+.charity-show .organization{
+  margin-bottom: 50px;
+  margin-left: 40px;
+}
+
+.information-charity{
+  min-height: 1800px;
+  margin-bottom: 40px;
+}
+
+.charity-show .project-infor{
+  margin-left: 22px;
+}
+
+
+
+// conversation
+
+.user-information{
+  min-height: 200px;
+}
+
+.conver-link{
+ left:30px;
+ top:120px;
+}
+
+.conver-link2{
+  left:200px;
+  top:120px;
+}
+
+
+// home page
+
+.carousel-inner img{
+  height: 500px;
+}
+
+
+.col{
+ 
+  padding: 13px;
+
+}
+
+.counting-sec{
+  padding: 10px 0;
+
+}
+
+.title-infor{
+  padding:10px !important;
+
+}
+.aboutUs .container{
+  min-height: 1700px;
+}
+
+.aboutUs .col-md-4{
+  margin-bottom: 50px;
+}
+
+.
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
