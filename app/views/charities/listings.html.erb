@@ -16,7 +16,7 @@
               <div class="row">
                 <%= form_tag charities_listings_path, :method => 'get', class: 'input-group'  do %>
                   <%= text_field_tag :search, params[:search], class: 'form-control', placeholder: 'Search for...' %>
-                  <span class="input-group-btn"><%= submit_tag "Search", class: "search-btn" %></span>
+                  <span class="input-group-btn"><%= submit_tag "Search", class:"search-btn" %></span>
                 <% end %>
               </div>
             </li>
@@ -100,7 +100,7 @@
 
                       
                     </div> 
-                    <% if user_signed_in? || current_user.admin? %>
+                    <% if user_signed_in? && current_user.admin?%>
                         <div class="button-listings">
                           <button class="edit-button"><%= link_to 'Edit', edit_charity_path(charity),class:"edit" %></button>
                           <button class="delete-button"><%= link_to 'Delete', charity_path(charity), method: :delete, class:"delete"%></button>

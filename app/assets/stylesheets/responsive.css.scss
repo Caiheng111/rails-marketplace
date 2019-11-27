@@ -374,11 +374,17 @@ width: 300px !important;
 
 
 .search-bar .all-projects{
+  margin-top:40px;
   margin-left:100px;
 }
 
+.section-listings .listing-picture{
+  height: 228px;
+  width: 280px; 
+}
+
  .infor-responsive{
-  width: 285px !important;
+  width: 280px !important;
   box-sizing: border-box;
 }
 .section-listings .search-btn {
@@ -438,13 +444,71 @@ width: 300px !important;
 
 // home page
 
+.home{
+  min-width: 380px;
+  overflow: hidden;
+}
+
 .carousel-inner img{
   height: 500px;
 }
 
+.carousel-inner .item{
+  height: 280px;
+}
+.home_bg{
+  height: 280px !important;
+}
+.carousel-caption {
+  margin-bottom: -100px;
+}
+
+.carousel-caption span{
+  font-size: 20px;
+  font-family: 'Merriweather', serif;
+  margin:0;
+
+}
+
+.top-text{
+  margin-left:22rem;
+}
+
+.carousel-caption{
+  margin-left:0rem;
+  margin-bottom:0rem;
+  position: absolute;
+  top:30px;
+
+}
+
+.carousel{
+  margin-bottom: 8rem;
+}
+
+.carousel-caption .yellow{
+
+  font-weight: 1000;
+   font-size: 30px;
+ }
+
+.donate-button1{
+  margin-left:0px;
+  margin-top:-30px;
+  padding-top:6px;
+  display: inline-block;
+  height: 30px;
+  width: 100px;
+  border:1px solid white;
+  border-radius: 30px;
+  font-size: 12px;
+  color:white;
+  text-decoration: none;
+}
+
 
 .col{
- 
+
   padding: 13px;
 
 }
@@ -464,6 +528,31 @@ width: 300px !important;
 
 .aboutUs .col-md-4{
   margin-bottom: 50px;
+}
+
+.aboutUs .container{
+  text-align:center;
+  padding-top:40px;
+ 
+}
+
+.aboutUs{
+  margin-bottom: 40px;
+}
+
+.projects h1{
+  left:80px;
+  font-size: 23px;
+}
+
+
+
+.donate-button2{
+  position: absolute;
+  top:220px;
+  left:200px;
+  
+
 }
 
 
