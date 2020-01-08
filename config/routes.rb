@@ -12,12 +12,9 @@ Rails.application.routes.draw do
     resources :messages
   end
   
-
   resources :line_items
   resources :carts
   resources :charities
-  
-  
 
   get '/volunteers/listings', to: 'volunteers#listings'
 
