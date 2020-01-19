@@ -31,11 +31,13 @@ In the traditional way of working, charities will pool the funds raised from ind
 
 ## 2.Why is it a problem that needs solving?(R8)
 
-The purpose of the Goodgiving is to remove the intermediary. The website itself serves as a donation platform. After the local community government or related agency company publishes the donation project, people can browse directly on the website. The amount of the donation of the website management organization is controlled by everyone. Scope, unlike a donation website, donors do not need to make monthly donations. Goodgiving's donations go out completely and voluntarily. After understanding the specific story and background of the project, the donor class randomly chooses to donate a small amount. Donors can also directly communicate with the organization that initiated the project to learn more about the project and decide whether to make a donation. Without third-party intermediaries, donors are more likely to believe in the authenticity and reliability of donations. Even after learning about the project background, you can register as a voluntee on the website.
+The purpose of the Goodgiving is to remove the intermediary. The website itself serves as a donation platform. After the local community government or related agency company publishes the donation project, people can browse directly on the website. The amount of the donation of the website management organization is controlled by everyone. Scope, unlike a donation website, donors do not need to make monthly donations. Goodgiving's donations go out completely and voluntarily. After understanding the specific story and background of the project, the donor class randomly chooses to donate a small amount. Donors can also directly communicate with the organization that initiated the project to learn more about the project and decide whether to make a donation. Without third-party intermediaries, donors are more likely to believe in the authenticity and reliability of donations. Even after learning about the project background, you can register as a volunteer on the website.
+
 
 I believe that with the promotion of Goodgiving, more and more public welfare projects hope to use the new media to let more power to pay attention to public welfare and promote the development of public welfare. More and more non-profit organizations hope to change the previous official authority image and turn public welfare into a career that everyone can participate in.
 
-The changes brought about by the Goodgiving online donation model are not limited to expanding the source of donations. The high degree of transparency makes the intermediaries almost invisible, allowing the recipients to deal directly with the sponsors. This form of approaching SNS not only allows donors to feel a sense of personal meaning from the freedom of choice, but also allows recipients to feel support from the community rather than a string of numbers added to the account.
+
+The changes brought about by the Goodgiving online donation model are not limited to expanding the source of donations. The high degree of transparency makes the intermediaries almost invisible, allowing the recipients to deal directly with the sponsors. This form of approaching SNS not only allows donors to feel a sense of personal meaning from the freedom of choice but also allows recipients to feel support from the community rather than a string of numbers added to the account.
 
 
 ## 3.A link (URL) to your deployed app(R9)
@@ -56,53 +58,74 @@ The changes brought about by the Goodgiving online donation model are not limite
 
   * ***Purpose***
 
-      The purpose of the Goodgiving is to remove the intermediary. The website itself serves as a donation platform. After the local community government or related agency company publishes the donation project, people can browse directly on the website. The amount of the donation of the website management organization is controlled by everyone. Scope, unlike a donation website, donors do not need to make monthly donations. Goodgiving's donations go out completely and voluntarily. After understanding the specific story and background of the project, the donor class randomly chooses to donate a small amount. Donors can also directly communicate with the organization that initiated the project to learn more about the project and decide whether to make a donation. Without third-party intermediaries, donors are more likely to believe in the authenticity and reliability of donations. Even after learning about the project background, you can register as a voluntee on the website.
+    The purpose of the Goodgiving is to remove the intermediary. The website itself serves as a donation platform. After the local community government or related agency company publishes the donation project, people can browse directly on the website. The amount of the donation of the website management organization is controlled by everyone. Scope, unlike a donation website, donors do not need to make monthly donations. Goodgiving's donations go out completely and voluntarily. After understanding the specific story and background of the project, the donor class randomly chooses to donate a small amount. Donors can also directly communicate with the organization that initiated the project to learn more about the project and decide whether to make a donation. Without third-party intermediaries, donors are more likely to believe in the authenticity and reliability of donations. Even after learning about the project background, you can register as a volunteer on the website.
 
 
-  * ***Functionality / features***
+* ***Functionality / features***
 
-    1. Login and sign up function (mutilple users)
-        User gem devise to set the multiple user authentication, user can sign up as a donor/voluntter or a organization. Once they signup, they can login and update their password.
-        *  When sign up as a organization（as a new organization）, the navbar will show the link profile, after clicking that link, the organization can add their profile information.
+1. Login and sign up function (multiple users)
 
-        * A dropdown menu will show out (including post a project/All projects/edit profile/Message), once the organization add their profile information on website.
+    User gem devises to set the multiple user authentication, user can sign up as a donor/volunteer or an organization. Once they signup, they can log in and update their password.
+    * When signing up as an organization（as a new organization）, the navbar will show the link profile, after clicking that link, the organization can add their profile information.
+    * A dropdown menu will show out (including post a project/All projects/edit profile/Message), once the organization adds their profile information on the website.
+    * When sign up ad a donor, the donor can send messages to the organization who post that project and donate money.
+    * When signing up as a volunteer, the navbar will show the link profile, after clicking that link, the volunteer can add their profile information.
 
-        * When sign up ad a donor, donor can send message to the organization who post that project and donate money.
 
-        * When sign up as a volunteer, the navbar will show the link profile, after clicking that link, the volunteer can add their profile information.
-  
 
-    2.  authentication for donating and sending message 
-        * User who hae not logined or signed up can't donate and send messages each other. they only can browse the website
 
-    3.  authentication and security for user and project information
-        * User only can access to their inly profile or edit(delete) their own projects. if they try to access other user's information, they will be leaded to the home page
 
-    4.  Searching, sorting and filtering capability
-        * In the proejcts listing page, user can search the project by key word
-        * In the proejcts listing page, user can choose projects by location listing
-        * In the proejcts listing page, user can choose projects by project category listing
+2. authentication for donating and sending a message
 
-    5.  page separation function
-        * Used gem 'will-pagination' to divide the proejcts
+    * User who has not log in or sign up can't donate and send messages to each other. they only can browse the website
 
-    6.  show the raised percentage in project
-        * User can see the raised percentage in project 
 
-    7.  Internal user messaging system within the app
-        * User can send message each other when they logged in
-        
 
-    8.  A payment system for your product. (e.g. Stripe)
-       * Setted Stripe to finish the payment function
+3. authentication and security for user and project information
 
-    9.  Admin user account for the admin user to administer the site
-      * Add the admin user authentication to manage the wensite information
-      * Admin user can edit or delete all projects information and user profile information
+    * User only can access to their only profile or edit(delete) their own projects. if they try to access other user's information, they will be led to the home page
 
-    10. responsive layout for phone size
 
-    11. (authentication）The user need login first when they want to send message and donate
+
+4. Searching, sorting and filtering capability
+
+    * In the projects listing page, user can search the project by keyword
+    * In the projects listing page, user can choose projects by location listing
+    * In the projects listing page, user can choose projects by project category listing
+
+
+
+5. page separation function
+
+    * Used gem 'will-pagination' to divide the projects
+
+
+
+6. show the raised percentage in the project
+
+    * User can see the raised percentage in the project
+
+
+
+7. Internal user messaging system within the app
+    * User can send message each other when they logged in
+
+
+
+8. A payment system for your product. (e.g. Stripe)
+
+    * Setted Stripe to finish the payment function
+
+
+
+9. Admin user account for the admin user to administer the site
+
+    * Add the admin user authentication to manage the website information
+    * Admin user can edit or delete all projects information and user profile information
+
+10. responsive layout for phone size
+
+11. (authentication）The user need login first when they want to send a message and donate
 
 
 
@@ -130,9 +153,9 @@ The changes brought about by the Goodgiving online donation model are not limite
 
   * ***Target audience***
 
-    *  Organizations or Communities who need raise money for local people.
-    *  Donor who are happy to donate a liite money to spme commmunities which need help.
-    *  Volunteer who are happy to join a project to offer help.
+    * Organizations or Communities who need to raise money for local people.
+    * Donor who are happy to donate a little money to the commmunities which need help.
+    * Volunteer who are happy to join a project to offer help.
 
 
   * ***Tech stack***
@@ -152,18 +175,18 @@ The changes brought about by the Goodgiving online donation model are not limite
 
 * ***user(Organizations)***
 
-  *  As organizations or a communities, they can sign up as a website user and can login and update their            password. 
-  *  As organizations or a communities, they can add and edit their basic profile information.
-  *  As organizations or a communities, they can post a project to raise money for their local people,and they       also can donate to other communities for helping each other.
-  *  As organizations or a communities, they can message to the donor or volunteer to give more details about        this project and reply any messages from the donors and volunteers.
-  *  As organizations or a communities, they can edit and delete their projects on website.
+  * As organizations or communities, they can sign up as a website user and can login and update their password.
+  * As organizations or communities, they can add and edit their basic profile information.
+  * As organizations or communities, they can post a project to raise money for their local people,and they also can donate to other communities for helping each other.
+  * As organizations or communities, they can message to the donor or volunteer to give more details about this project and reply to any messages from the donors and volunteers.
+  * As organizations or communities, they can edit and delete their projects on the website.
 
 * ***user(Donors)***
 
-  *  As donbors, they can sign up as a website user and can login and update their password. 
-  *  As donors, they can see all the projects on the website.
-  *  As donors, they can send message to organization who post that project to ask project details or other sdetails.
-  *  As donors, they can donate more than one project at one time.
+  * As donors, they can sign up as a website user and can log in and update their password.
+  * As donors, they can see all the projects on the website.
+  * As donors, they can send messages to the organization who post that project to ask project details or other details.
+  * As donors, they can donate more than one project at one time.
   
 
 * ***user(Voluntters)***
