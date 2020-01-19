@@ -109,6 +109,7 @@ body, h2,h1,h3,h4{
 
 // index page
 
+
 .index-picture{
   height: 250px;
 
@@ -119,9 +120,13 @@ body, h2,h1,h3,h4{
 }
 
 
-
+.section-listings .container{
+  min-height: 300px;
+}
 
 // listings page
+
+
 
 .section-listings .image-charity{
   height: 300px;
@@ -194,13 +199,13 @@ body, h2,h1,h3,h4{
   justify-content: center;
 }
 
-.search-button{
+.section-listings .search-button{
   display: block;
   height: 200px;
 }
 
 .all-projects{
-  
+
   font-family: 'Merriweather', serif;
   font-size: 16px;
   color:black;
@@ -214,6 +219,8 @@ body, h2,h1,h3,h4{
 }
 
 .dropdown-toggle{
+  font-size: 16px;
+  height: 40px;
   margin-right:20px;
   color:black;
 

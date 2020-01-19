@@ -9,7 +9,8 @@ body, h1{
 }
 
 .home{
-  height: 1800px;
+  min-height: 1800px;
+  position: relative;
 }
 
 .clear-padding{
@@ -22,6 +23,10 @@ body, h1{
 .clear-col{
   margin:0;
   padding:0;
+}
+
+.carousel{
+  margin-bottom: 11rem;
 }
 
 .carousel-caption{
@@ -56,8 +61,13 @@ body, h1{
  
  }
 
+ .projects{
+   margin-bottom: 80px;
+ }
+
 .project{
  width: 480px;
+ 
 }
 
 .project-one{
@@ -157,7 +167,9 @@ body, h1{
 
 
 
-
+.aboutUs{
+  margin-bottom: 80px;
+}
 
 .aboutUs h3{
   font-size: 20px;
@@ -262,6 +274,45 @@ body, h1{
 
 
 
+
+// number-counter
+
+.number-counter{
+  position: relative;
+  height: 80px;
+}
+
+.middle{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.counting-sec{
+  padding: 40px 0;
+  width: 100%;
+  background:rgb(255, 180, 34);
+}
+.inner-width{
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+}
+.col{
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.col i{
+  font-size: 40px;
+  color: #333;
+}
+.num{
+  font-size: 40px;
+  margin: 20px 0;
+}
 
 
 

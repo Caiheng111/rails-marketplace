@@ -1,8 +1,10 @@
 class Charity < ApplicationRecord
  
-  before_destroy :not_referenced_by_any_line_item
+  # before_destroy :not_referenced_by_any_line_item
   belongs_to :category
   belongs_to :organization
+  has_many :line_items, dependent: :destroy
+  
   has_many_attached :pictures
 
   validates :title, presence: true, length: { minimum: 3, maximum: 50 }
